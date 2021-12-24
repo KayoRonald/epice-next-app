@@ -6,7 +6,6 @@ import {
   Textarea, Button, useColorModeValue, useToast
 } from '@chakra-ui/react';
 import Head from 'next/head'
-import swal from 'sweetalert';
 import {
   AiOutlineUserDelete,
   AiOutlineMail,
@@ -15,18 +14,28 @@ import {
 import { Input, FormHeader } from '../components/';
 const Contact: React.FC = () => {
   const toast = useToast()
-  const form = React.useRef<any>();
   const sendEmail = (e: any) => {
     e.preventDefault();
-    console.log(form.current)
-    emailjs.sendForm('service_07ntefs', 'template_bqyc7jw', form.current, 'user_O8HA1TiXfeemZl40MONHN')
+    emailjs.sendForm('service_07ntefs', 'template_bqyc7jw', e.target, 'user_O8HA1TiXfeemZl40MONHN')
       .then((result) => {
-        console.log(result)
+        toast({
+          title: 'Enviado com sucesso.',
+          description: "Aguarde alguns dias receber a sua resposta.",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
       }, (error) => {
-        swal("Ops!", "Ocorreu algum erro com nossa api :(", "error");
+        toast({
+          title: 'Não foi possível cadastrar.',
+          description: "Ocorreu um erro com nossa api :(",
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        })
       });
+    e.target.reset()
   };
-
   return (
     <React.Fragment key="key">
       <Head>
@@ -42,8 +51,7 @@ const Contact: React.FC = () => {
       >
         <Box
           as="form"
-          onSubmit={() => sendEmail}
-          ref={form}
+          onSubmit={sendEmail}
           backgroundColor={useColorModeValue('#d0d8dd', '#0e0e10')}
           px={4}
           width="94%"
@@ -56,61 +64,54 @@ const Contact: React.FC = () => {
               heading="Contato"
               text="Detalhe o seu problema"
             />
-            <ContactForm />
+            <Box my={8} textAlign="left">
+              <FormControl id="nome">
+                <FormLabel>Nome:</FormLabel>
+                <Input
+                  type="text"
+                  placeholder="Insira o seu nome"
+                  name="name"
+                  iconLeft={<AiOutlineUserDelete />}
+                />
+              </FormControl>
+              <FormControl id="email" mt={2}>
+                <FormLabel>Email:</FormLabel>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Insira o seu endereço de email"
+                  iconLeft={<AiOutlineMail />}
+                />
+              </FormControl>
+              <FormControl id="descricao" mt={2}>
+                <FormLabel>Descrição:</FormLabel>
+                <Input
+                  type="text"
+                  name="subject"
+                  placeholder="Insira a sua descrição"
+                  iconLeft={<AiFillFileText />}
+                />
+              </FormControl>
+              <FormControl id="text" mt={2}>
+                <FormLabel>Texto:</FormLabel>
+                <Textarea
+                  placeholder="Coloque o seu texto aqui"
+                  name="message"
+                  required
+                  focusBorderColor="purple.500"
+                  backgroundColor={useColorModeValue("white", "gray.800")}
+                  border={0}
+                  color={useColorModeValue("#18216d", "white")}
+                />
+              </FormControl>
+              <ButtonSend />
+            </Box>
           </Box>
         </Box>
       </Flex>
     </React.Fragment>
   );
 };
-
-const ContactForm = () => {
-  return (
-    <Box my={8} textAlign="left">
-      <FormControl id="nome">
-        <FormLabel>Nome:</FormLabel>
-        <Input
-          type="text"
-          placeholder="Insira o seu nome"
-          name="user_name"
-          iconLeft={<AiOutlineUserDelete />}
-        />
-      </FormControl>
-      <FormControl id="email" mt={2}>
-        <FormLabel>Email:</FormLabel>
-        <Input
-          type="email"
-          name="user_email"
-          placeholder="Insira o seu endereço de email"
-          iconLeft={<AiOutlineMail />}
-        />
-      </FormControl>
-      <FormControl id="descricao" mt={2}>
-        <FormLabel>Descrição:</FormLabel>
-        <Input
-          type="text"
-          name="user_subject"
-          placeholder="Insira a sua descrição"
-          iconLeft={<AiFillFileText />}
-        />
-      </FormControl>
-      <FormControl id="text" mt={2}>
-        <FormLabel>Texto:</FormLabel>
-        <Textarea
-          placeholder="Coloque o seu texto aqui"
-          name="message"
-          required
-          focusBorderColor="purple.500"
-          backgroundColor={useColorModeValue("white", "gray.800")}
-          border={0}
-          color={useColorModeValue("#18216d", "white")}
-        />
-      </FormControl>
-      <ButtonSend />
-    </Box>
-  );
-};
-
 const ButtonSend = () => {
   return (
     <Button
