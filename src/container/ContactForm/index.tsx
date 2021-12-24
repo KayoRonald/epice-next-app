@@ -6,7 +6,6 @@ import {
 } from '@chakra-ui/react';
 import { AiOutlineSend, AiOutlineUserAdd, AiOutlineMail } from 'react-icons/ai'
 import { IoMdSchool } from 'react-icons/io'
-import { Slide, Fade } from "react-awesome-reveal";
 import Input from '../../components/Input';
 import { palestrantes } from '../../data/palestrante';
 import api from '../../api';
@@ -68,7 +67,6 @@ export default function Form() {
         pt={{ base: 10, sm: 20, lg: 32 }}
       >
         <Stack spacing={5}>
-          <Slide direction="left">
             <Heading
               lineHeight={1.1}
               fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
@@ -92,7 +90,6 @@ export default function Form() {
               />
             </Flex>
             <Stack direction={'row'} spacing='1rem' align={'center'}>
-              <Fade>
                 <AvatarGroup max={5}>
                   {palestrantes.map((avatar) => (
                     <Avatar
@@ -108,11 +105,8 @@ export default function Form() {
                     </Avatar>
                   ))}
                 </AvatarGroup>
-              </Fade>
             </Stack>
-          </Slide>
         </Stack>
-        <Slide direction="right">
           <Stack
             bg={useColorModeValue('#d0d8dd', '#000')}
             rounded={'xl'}
@@ -169,8 +163,6 @@ export default function Form() {
               </Stack>
             </Box>
           </Stack>
-          <div className='icon-scroll' />
-        </Slide>
       </Container>
     </Box>
   )
