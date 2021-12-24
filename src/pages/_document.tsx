@@ -43,7 +43,6 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="icon" href="/img/logo.png" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#000000" />
           <meta name="description" content="EPICE 2021" />
           <meta name="keywords" content="EPICE 2021" />
