@@ -11,7 +11,7 @@ import { palestrantes } from '../../data/palestrante';
 import api from '../../api';
 
 export default function Form() {
-  const [nome, setName] = React.useState<string>('');
+  const [name, setName] = React.useState<string>('');
   const [email, setEmail] = React.useState<any>('');
   const [curso, setCurso] = React.useState<string>('');
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -20,14 +20,14 @@ export default function Form() {
   async function handleSubmit(event: React.FormEvent): Promise<void> {
     event.preventDefault();
     const data = {
-      nome,
+      name,
       email,
       curso,
     };
-    if (nome !== '' && email !== '' && curso !== '') {
+    if (name !== '' && email !== '' && curso !== '') {
       try {
         setLoading(true)
-          await api.post('/', data)
+         await api.post('/registionPoint/', data)
           toast({
             title: 'Cadastrado com sucesso.',
             description: "Aguarde alguns dias para realização do evento.",
@@ -120,7 +120,7 @@ export default function Form() {
               <Box>
                 <Input
                   placeholder="Ex: João Nobrega"
-                  txt="Nome completo"
+                  txt="name completo"
                   name="name"
                   children={<AiOutlineUserAdd />}
                   type="text"
@@ -140,7 +140,7 @@ export default function Form() {
               <Box>
                 <Input
                   placeholder="Ex: INFO, Eletrônica, Visitante..."
-                  txt="Nome do curso"
+                  txt="name do curso"
                   name="course"
                   children={<IoMdSchool />}
                   onChange={(e) => setCurso(e.target.value)}
