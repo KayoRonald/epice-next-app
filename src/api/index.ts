@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://sheetdb.io/api/v1/s6ybu7fwjg1hy',
+  baseURL: 'https://epice-app.herokuapp.com/',
 });
 
 export default api;
