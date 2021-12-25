@@ -18,7 +18,7 @@ export default function NavHero() {
         transition="all 0.5s ease-in-out"
         pos="fixed"
         top="0"
-        zIndex="modal"
+        zIndex="10"
         w="full"
         px={{ base: 2, sm: 4 }}
         py={4}

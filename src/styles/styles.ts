@@ -9,7 +9,9 @@ export const Styles = createGlobalStyle`
         src: url("/fonts/Motiva-Sans-Light.ttf") format("truetype");
         font-style: normal;
     }
-
+    div.chat-wrapper[opened="true"]{
+      height:490px !important;
+    }
     @font-face {
         font-family: "Motiva Sans Bold";
         src: url("/fonts/Motiva-Sans-Bold.ttf") format("truetype");
