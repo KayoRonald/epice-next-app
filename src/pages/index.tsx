@@ -14,13 +14,12 @@ export default function Index() {
       <React.Fragment>
         <df-messenger
           intent="WELCOME"
-          chat-title="garibaldo-sirius"
+          chat-title="Tesla"
           agent-id="3e523c6e-2027-4f5f-81ec-fb28d7594610"
           language-code="pt-br"
+          chat-icon="https://epice-app.vercel.app/img/logo.png"
         >
         </df-messenger>
-        <Script src="https://code.jquery.com/jquery-1.9.1.min.js" />
-        <Script src="../javascript/" />
         <Script
           src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"
         />
