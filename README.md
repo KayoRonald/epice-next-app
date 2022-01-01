@@ -24,7 +24,7 @@ O 'EPICE' é um evento que ocorre anualmente sempre trazendo novas pessoas de va
 
 Esse projeto foi feito utilizando as seguintes tecnologias:
 
-> - **[React.js](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)**
+> - **[Nextjs](https://nextjs.org/)**
 >
 > - **[Chakra-ui](https://chakra-ui.com/)**
 >
@@ -53,7 +53,7 @@ Esse projeto foi feito utilizando as seguintes tecnologias:
 **1. Faça um clone do repositório:**
 
 ```bash 
-  https://github.com/romulomenezesjr/epice2021
+  https://github.com/KayoRonald/epice-next-app/
 ```
 
 **2. Executando a Aplicação:**
@@ -61,7 +61,7 @@ Esse projeto foi feito utilizando as seguintes tecnologias:
 Abrindo o terminal, você pode executar o seguinte comando para entrar no diretório do projeto:
 
 ```bash
-  cd epice2021
+  cd epice-next-app
 ```
 
 **3. Como instalar as dependências**
@@ -78,10 +78,10 @@ npm install
 **4. Como rodar o projeto**
 
 ```bash
-yarn start
+yarn dev
 ```
 ```bash
-npm start
+npm run dev
 ```
 
 <hr/>
