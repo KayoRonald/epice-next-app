@@ -7,11 +7,11 @@ export type ChakraProps = {
 };
 
 export type MiddleBlockProps = {
-  title: string;
-  content: string;
-  id: number;
-  directions: string;
-  img: string;
+  title?: string;
+  content?: string;
+  id?: number;
+  directions?: string;
+  img?: string;
 }
 
 export interface InputProps extends ChakraInputProps {

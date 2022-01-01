@@ -1,14 +1,29 @@
-import type { NextPage } from 'next'
+import { GetStaticProps } from 'next'
 import React from 'react'
 import {
   Box, Container, Text, Heading,
   Stack, SimpleGrid, Avatar, Center, IconButton, useColorModeValue, Skeleton
 } from '@chakra-ui/react';
 import { Fade } from 'react-awesome-reveal'
-import { palestrantes } from '../../data/palestrante';
+import useSWR from 'swr'
 import { FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
-const Palestrantes: NextPage = () => {
+// import { palestrantes } from '../../data/palestrante';
+import fetch from '../../lib/fetch'
+type palestrantesProps = {
+  id: number;
+  avatar: string;
+  name: string;
+  frase: string;
+  instagram?: string;
+  email?: string;
+  linkedinIn?: string;
+  github?: string;
+}
+const Palestrantes = () => {
   const ic = useColorModeValue("#18216d", "white");
+  const { data, error } = useSWR<palestrantesProps[]>('/api/', fetch)
+  const { data: data2 } = useSWR(null, fetch)
+  console.log(data)
   return (
     <Box as="section" id="palestras">
       <Box>
@@ -33,9 +48,9 @@ const Palestrantes: NextPage = () => {
         <Container maxWidth="150ch">
           <Stack spacing={8}>
             <SimpleGrid columns={[1, 1, 2]} spacing="40px" pt="3">
-              {palestrantes.map((member) => (
+              {data ? data.map((member) => (
                 <Fade key={member.id}>
-                  <Box fallback={<Skeleton />}  borderLeftWidth="4px" borderLeftColor="purple.500" padding="7px" borderRadius="4px" key={member.id}>
+                  <Box fallback={<Skeleton />} borderLeftWidth="4px" borderLeftColor="purple.500" padding="7px" borderRadius="4px" key={member.id}>
                     <Stack direction="column" spacing={6} textAlign="center">
                       <Center>
                         <Avatar
@@ -71,7 +86,7 @@ const Palestrantes: NextPage = () => {
                                 aria-label="linkedinIn"
                                 icon={<FaGithub fontSize="24px" />}
                               />
-                            ):(
+                            ) : (
                               <React.Fragment />
                             )}
                             <IconButton
@@ -89,7 +104,7 @@ const Palestrantes: NextPage = () => {
                                 aria-label="linkedinIn"
                                 icon={<FaGithub fontSize="24px" />}
                               />
-                            ):(
+                            ) : (
                               <React.Fragment />
                             )}
                           </Stack>
@@ -98,7 +113,7 @@ const Palestrantes: NextPage = () => {
                     </Stack>
                   </Box>
                 </Fade>
-              ))}
+              )): ''}
             </SimpleGrid>
           </Stack>
         </Container>
@@ -106,5 +121,16 @@ const Palestrantes: NextPage = () => {
     </Box>
   );
 }
+
+// export const getStaticProps: GetStaticProps = async () => {
+//   const res = await fetch('/api/')
+//   const posts: palestrantesProps[] = await res.json()
+
+//   return {
+//     props: {
+//       posts,
+//     },
+//   }
+// }
 
 export default Palestrantes
