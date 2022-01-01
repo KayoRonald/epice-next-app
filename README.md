@@ -87,7 +87,7 @@ npm run dev
 <hr/>
 
 <p align="center">
-  <img src="github/reactjs.png" width="150" title="React">
+  <img src="https://www.rlogical.com/wp-content/uploads/2021/08/Rlogical-Blog-Images-thumbnail.png" width="150" title="Nextjs">
   <img src="github/typescript.png" width="150" alt="TypeScript" title="TypeScript">
   <img src="github/chakra-ui.png" width="150" alt="chakra" title="chakra"
 </p>
