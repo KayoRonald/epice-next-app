@@ -2,7 +2,7 @@ import React from 'react'
 import Script from 'next/script'
 import Head from 'next/head'
 import { MyTimeline, HeroHome, MiddleBlock, ContentBlock, ContactForm } from '../container'
-import About from '../data/jumbo.json'
+
 export default function Index() {
   return (
     <React.Fragment>
@@ -25,13 +25,7 @@ export default function Index() {
           strategy="lazyOnload"
         />
       </React.Fragment>
-      <MiddleBlock
-        title={About.title}
-        content={About.text}
-        directions={About.directions}
-        id={About.id}
-        img={About.img}
-      />
+      <MiddleBlock />
       <ContentBlock />
       <MyTimeline />
       <ContactForm />

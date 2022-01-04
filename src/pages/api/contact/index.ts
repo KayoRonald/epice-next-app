@@ -15,29 +15,31 @@ const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   secure: false,
   auth: {
-    user: process.env.USER_GMAIL,
+    user: process.env.gmail,
     pass: process.env.PASS_GMAIL
   },
   tls: { rejectUnauthorized: false }
 });
 
 export default (req: ExtendedNextApiRequest, res: NextApiResponse) => {
-  console.log(process.env.USER_GMAIL)
   const { name, email, subject, message } = req.body
   const emailSend = {
-    from: email,
-    to: process.env['USER'],
+    from: `${name} <${email}>`,
+    to: '@suporte ' + process.env.gmail,
     subject: `Nextjs - ${name.split(' ')[0]} - ${subject}.`,
     replyTo: email,
     html: `
-      <b>Nova mensagem de ${name}</b>
-      </br>
-      <p>${message}</p>
+     <div>
+     <img style="width: 250px;height: auto;width: 100%;max-width: 500px;" src="https://i.ibb.co/k64Ntj8/Email-campaign-pana.png" />
+     <p>${message}</p>
+     </br>
+     <b>Nova mensagem de ${name.split(' ')[0]+' '+name.split(' ')[1]}</b>
+     </div>
     `,
   }
   transporter.sendMail(emailSend, function (error, info) {
     if (error) {
-      return res.status(400).json({ message: 'Falha na conexão code erro `EMAIL-300`' });;
+      return res.status(400).send('Falha na conexão code erro `EMAIL-300`');
     } else {
       return res.status(200).json({ message: 'sucesso' });;
     }
