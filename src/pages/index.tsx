@@ -11,7 +11,7 @@ export default function Index() {
       </Head>
       <HeroHome />
       {/* Chat Bot */}
-      <React.Fragment>
+      {/* <React.Fragment>
         <df-messenger
           intent="WELCOME"
           chat-title="Tesla"
@@ -22,14 +22,9 @@ export default function Index() {
         </df-messenger>
         <Script
           src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"
+          strategy="lazyOnload"
         />
-        <style jsx>{`
-          div.chat-wrapper{
-            height: 470px !important
-          }
-        }
-      `}</style>
-      </React.Fragment>
+      </React.Fragment> */}
       <MiddleBlock
         title={About.title}
         content={About.text}

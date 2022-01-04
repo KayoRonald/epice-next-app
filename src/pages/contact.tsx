@@ -11,31 +11,77 @@ import {
   AiOutlineMail,
   AiFillFileText,
 } from 'react-icons/ai';
+import axios from 'axios'
 import { Input, FormHeader } from '../components/';
 const Contact: React.FC = () => {
   const toast = useToast()
-  const sendEmail = (e: any) => {
-    e.preventDefault();
-    emailjs.sendForm('service_07ntefs', 'template_bqyc7jw', e.target, 'user_O8HA1TiXfeemZl40MONHN')
-      .then((result) => {
+  // const sendEmail = (e: any) => {
+  //   e.preventDefault();
+  //   emailjs.sendForm('service_07ntefs', 'template_bqyc7jw', e.target, 'user_O8HA1TiXfeemZl40MONHN')
+  //     .then((result) => {
+  //       toast({
+  //         title: 'Enviado com sucesso.',
+  //         description: "Aguarde alguns dias receber a sua resposta.",
+  //         status: 'success',
+  //         duration: 9000,
+  //         isClosable: true,
+  //       })
+  //     }, (error) => {
+  //       toast({
+  //         title: 'Não foi possível cadastrar.',
+  //         description: "Ocorreu um erro com nossa api :(",
+  //         status: 'error',
+  //         duration: 5000,
+  //         isClosable: true,
+  //       })
+  //     });
+  //   e.target.reset()
+  // };
+  const [name, setName] = React.useState<string>('');
+  const [email, setEmail] = React.useState<any>('');
+  const [subject, setSubject] = React.useState<string>('');
+  const [message, setMessage] = React.useState<string>('');
+  const [loading, setLoading] = React.useState<boolean>(false);
+  async function handleSubmit(event: React.FormEvent): Promise<void> {
+    event.preventDefault();
+    const data = {
+      name,
+      email,
+      subject,
+      message
+    };
+    if (name !== '' && email !== '' && subject !== '') {
+      try {
+        setLoading(true)
+        await axios.post('/api/contact', data)
         toast({
-          title: 'Enviado com sucesso.',
-          description: "Aguarde alguns dias receber a sua resposta.",
+          title: 'Enviado com sucesso!.',
+          description: "Aguarde alguns dias para que possamos lhe ajudar.",
           status: 'success',
           duration: 9000,
           isClosable: true,
         })
-      }, (error) => {
+      } catch (error: any) {
         toast({
           title: 'Não foi possível cadastrar.',
-          description: "Ocorreu um erro com nossa api :(",
+          description: error.message || error,
           status: 'error',
           duration: 5000,
           isClosable: true,
         })
-      });
-    e.target.reset()
-  };
+      } finally {
+        setLoading(false)
+      }
+    } else {
+      toast({
+        title: 'Não foi possível cadastrar.',
+        description: "Certifique-se de que todos os campos estejam preenchidos.",
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      })
+    }
+  }
   return (
     <React.Fragment key="key">
       <Head>
@@ -51,7 +97,7 @@ const Contact: React.FC = () => {
       >
         <Box
           as="form"
-          onSubmit={sendEmail}
+          onSubmit={handleSubmit}
           backgroundColor={useColorModeValue('#d0d8dd', '#0e0e10')}
           px={4}
           width="94%"
@@ -72,6 +118,7 @@ const Contact: React.FC = () => {
                   placeholder="Insira o seu nome"
                   name="name"
                   iconLeft={<AiOutlineUserDelete />}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </FormControl>
               <FormControl id="email" mt={2}>
@@ -81,6 +128,7 @@ const Contact: React.FC = () => {
                   name="email"
                   placeholder="Insira o seu endereço de email"
                   iconLeft={<AiOutlineMail />}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </FormControl>
               <FormControl id="descricao" mt={2}>
@@ -90,6 +138,7 @@ const Contact: React.FC = () => {
                   name="subject"
                   placeholder="Insira a sua descrição"
                   iconLeft={<AiFillFileText />}
+                  onChange={(e) => setSubject(e.target.value)}
                 />
               </FormControl>
               <FormControl id="text" mt={2}>
@@ -102,6 +151,7 @@ const Contact: React.FC = () => {
                   backgroundColor={useColorModeValue("white", "gray.800")}
                   border={0}
                   color={useColorModeValue("#18216d", "white")}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
               </FormControl>
               <ButtonSend />

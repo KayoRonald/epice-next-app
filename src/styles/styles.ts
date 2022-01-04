@@ -1,9 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export const Styles = createGlobalStyle`
-':focus:not(:focus-visible):not([role="dialog"]):not([role="menu"])': {
-	boxShadow: 'none !important'
-}
     @font-face {
         font-family: "Motiva Sans Light";
         src: url("/fonts/Motiva-Sans-Light.ttf") format("truetype");
