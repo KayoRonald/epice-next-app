@@ -1,31 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 export const Styles = createGlobalStyle`
-    @font-face {
-        font-family: "Motiva Sans Light";
-        src: url("/fonts/Motiva-Sans-Light.ttf") format("truetype");
-        font-style: normal;
-    }
     div.chat-wrapper[opened="true"]{
       height:490px !important;
     }
-    @font-face {
-        font-family: "Motiva Sans Bold";
-        src: url("/fonts/Motiva-Sans-Bold.ttf") format("truetype");
-        font-style: normal;
-    }
 
-
-    body,
-    html,
-    a {
-        font-family: 'Motiva Sans Light', sans-serif;
-    }
-a{
-    cursor: pointer;
-
-}
-
+  a{
+      cursor: pointer;
+  }
     body {
         margin:0;
         padding:0;
@@ -153,7 +135,7 @@ a{
         font-weight: normal;
         color: #7f8c8d;
         color: #ffffff;
-        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        /* font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; */
         letter-spacing: 2px;
       }
       .scroll-btn > *:hover,

@@ -4,40 +4,46 @@ import {
   Heading, Image, Skeleton, Text, useColorModeValue, Icon, Flex,
   IconProps, Box
 } from '@chakra-ui/react';
-import { MiddleBlockProps } from '../../types'
-const MiddleBlock: NextPage<MiddleBlockProps> = ({ title, content, id, directions, img }) => {
+import { dataHome } from '../../data/home'
+
+const MiddleBlock: NextPage = () => {
   const ic = useColorModeValue("#18216d", "white");
   return (
     <Box id="sobre" pt={7}>
       <Jumbotron.Container>
-        <Jumbotron key={id} directions={directions}>
-          <Jumbotron.Pane>
-            <Heading color={ic}>{title}</Heading>
-            <Text color={ic}>
-              {content}
-            </Text>
-          </Jumbotron.Pane>
-          <Jumbotron.Pane>
-            <Flex
-              flex={1}
-              justify={'center'}
-              align={'center'}
-              position={'relative'}
-              w={'full'}>
-              <Blob
-                mt={2}
-                w={'150%'}
-                h={'150%'}
-                position={'absolute'}
-                top={'-20%'}
-                left={0}
-                zIndex={-1}
-                color='purple.300'
-              />
-              <Image mt={2} id={`id${id}`} src={img} alt={title} fallback={<Skeleton />} />
-            </Flex>
-          </Jumbotron.Pane>
-        </Jumbotron>
+        {dataHome.map((item) => (
+          <Jumbotron key={item.id} directions={item.directions}>
+            <Jumbotron.Pane>
+              <Heading color={ic}>{item.title}</Heading>
+              <Text color={ic}>
+                {item.text}
+              </Text>
+            </Jumbotron.Pane>
+            <Jumbotron.Pane>
+              <Flex
+                flex={1}
+                justify={'center'}
+                align={'center'}
+                position={'relative'}
+                w={'full'}
+                m='auto'
+                maxW='500px'
+              >
+                <Blob
+                  mt={2}
+                  w={'150%'}
+                  h={'150%'}
+                  position={'absolute'}
+                  top={'-20%'}
+                  left={0}
+                  zIndex={-1}
+                  color={item.color}
+                />
+                <Image mt={2} id={`id${item.id}`} loading='lazy' src={item.img} alt={item.title} fallback={<Skeleton />} />
+              </Flex>
+            </Jumbotron.Pane>
+          </Jumbotron>
+        ))}
       </Jumbotron.Container>
     </Box>
   );
