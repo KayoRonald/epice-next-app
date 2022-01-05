@@ -3,7 +3,7 @@ import Head from 'next/head'
 import React from 'react'
 import NextLink from "next/link"
 import { FaHome } from 'react-icons/fa'
-import { VStack, Button, Heading, Text, Center, Img as Image, Box, Flex } from '@chakra-ui/react'
+import { VStack, Stack, Button, Heading, Text, Center, Img as Image, Box, Flex } from '@chakra-ui/react'
 
 const InternalServer: NextPage = () => {
   return (
@@ -28,26 +28,44 @@ const InternalServer: NextPage = () => {
                 rounded="lg"
                 maxW="400px"
                 loading="lazy"
-                src="/img/svg/undraw_warning_cyit.svg"
+                src="/img/svg/Internal-Server.svg"
                 alt="Hellonext feedback boards software screenshot"
               />
             </Center>
             <VStack justify="center" spacing="4" textAlign="center" as="article">
-              <Heading>404 | Página não disponível</Heading>
+              <Heading>500: Erro interno do servidor</Heading>
               <Text fontSize={{ md: "xl" }}>
-                Ops! Parece que você seguiu um link incorreto. Se você acha que isso é um problema para nós, diga-nos
+                Ooops! o servidor encontrou uma condição inesperada que o impediu de atender à solicitação
               </Text>
-              <NextLink href="/" passHref>
-                <Button
-                  as="a"
-                  aria-label="Back to Home"
-                  leftIcon={<FaHome />}
-                  colorScheme="teal"
-                  size="lg"
-                >
-                  Back to Home
-                </Button>
-              </NextLink>
+              <Stack
+                mb={10}
+                spacing="4"
+                justify="center"
+                direction={{ base: "column", sm: "row" }}
+              >
+                <NextLink href="/" passHref>
+                  <Button
+                    as="a"
+                    aria-label="Back to Home"
+                    leftIcon={<FaHome />}
+                    colorScheme="teal"
+                    size="lg"
+                  >
+                    Back to Home
+                  </Button>
+                </NextLink>
+                <NextLink href="/" passHref>
+                  <Button
+                    as="a"
+                    aria-label="Back to Home"
+                    leftIcon={<FaHome />}
+                    colorScheme="teal"
+                    size="lg"
+                  >
+                    Back to Home
+                  </Button>
+                </NextLink>
+              </Stack>
             </VStack>
           </Box>
         </Box>
