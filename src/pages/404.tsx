@@ -3,7 +3,7 @@ import Head from 'next/head'
 import React from 'react'
 import NextLink from "next/link"
 import { FaHome } from 'react-icons/fa'
-import { VStack, Button, Heading, Text, Center, Img as Image, Box, Flex } from '@chakra-ui/react'
+import { VStack, Stack, Button, Heading, Text, Center, Img as Image, Box, Flex } from '@chakra-ui/react'
 
 const PageNotFound: NextPage = () => {
   return (
@@ -37,17 +37,35 @@ const PageNotFound: NextPage = () => {
               <Text fontSize={{ md: "xl" }}>
                 Ops! Parece que você seguiu um link incorreto. Se você acha que isso é um problema para nós, diga-nos
               </Text>
-              <NextLink href="/" passHref>
-                <Button
-                  as="a"
-                  aria-label="Back to Home"
-                  leftIcon={<FaHome />}
-                  colorScheme="teal"
-                  size="lg"
-                >
-                  Back to Home
-                </Button>
-              </NextLink>
+              <Stack
+                mt="10"
+                spacing="4"
+                justify="center"
+                direction={{ base: "column", sm: "row" }}
+              >
+                <NextLink href="/" passHref>
+                  <Button
+                    as="a"
+                    aria-label="Back to Home"
+                    leftIcon={<FaHome />}
+                    colorScheme="teal"
+                    size="lg"
+                  >
+                    Back to Home
+                  </Button>
+                </NextLink>
+                <NextLink href="/" passHref>
+                  <Button
+                    as="a"
+                    aria-label="Back to Home"
+                    leftIcon={<FaHome />}
+                    colorScheme="teal"
+                    size="lg"
+                  >
+                    Back to Home
+                  </Button>
+                </NextLink>
+              </Stack>
             </VStack>
           </Box>
         </Box>
