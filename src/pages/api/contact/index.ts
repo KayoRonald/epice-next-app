@@ -33,7 +33,7 @@ export default (req: ExtendedNextApiRequest, res: NextApiResponse) => {
      <img style="width: 250px;height: auto;width: 100%;max-width: 500px;" src="https://i.ibb.co/k64Ntj8/Email-campaign-pana.png" />
      <p>${message}</p>
      </br>
-     <b>Nova mensagem de ${name.split(' ')[0]+' '+name.split(' ')[1]}</b>
+     <b>Nova mensagem de ${name.split(' ')[0]</b>
      </div>
     `,
   }
