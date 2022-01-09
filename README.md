@@ -31,6 +31,10 @@ Esse projeto foi feito utilizando as seguintes tecnologias:
 > - **[Styled Components](https://styled-components.com/)**
 >  
 > - **[TypeScript](https://www.typescriptlang.org/)**
+>
+> - **[serverless-mysql](https://www.serverless.com/plugins/serverless-mysql)**
+>
+> - **[nodemailer](https://nodemailer.com/about/)**
 
 <hr/>
 
