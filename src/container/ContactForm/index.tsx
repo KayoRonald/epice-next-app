@@ -8,7 +8,7 @@ import { AiOutlineSend, AiOutlineUserAdd, AiOutlineMail } from 'react-icons/ai'
 import { IoMdSchool } from 'react-icons/io'
 import Input from '../../components/Input';
 import { palestrantes } from '../../data/palestrante';
-import api from '../../api';
+import axios from 'axios';
 
 export default function Form() {
   const [name, setName] = React.useState<string>('');
@@ -27,7 +27,7 @@ export default function Form() {
     if (name !== '' && email !== '' && curso !== '') {
       try {
         setLoading(true)
-         await api.post('/registionPoint/', data)
+         await axios.post('/api/subscription', data)
           toast({
             title: 'Cadastrado com sucesso.',
             description: "Aguarde alguns dias para realização do evento.",
