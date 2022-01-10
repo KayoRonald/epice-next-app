@@ -38,8 +38,8 @@ export default function Footer() {
           align={{ base: 'center', md: 'center' }}>
           <Text>© {new Date().getFullYear()} Epice</Text>
           <Stack direction={'row'} spacing={6}>
-            <IconButton as="a" href='/' aria-label="Github" target="_blank" icon={<FaGithub fontSize="20px" />} />
-            <IconButton as="a" href='/' target="_blank" aria-label="Instagram" icon={<FaInstagram fontSize="20px" />} />
+            <IconButton as="a" href='https://github.com/KayoRonald/epice-next-app' aria-label="Github" target="_blank" icon={<FaGithub fontSize="20px" />} />
+            <IconButton as="a" href='https://www.instagram.com/epice.2021/' target="_blank" aria-label="Instagram" icon={<FaInstagram fontSize="20px" />} />
             <IconButton as="a" href='/' aria-label="Twitter" target="_blank" icon={<FaTwitter fontSize="20px" />} />
           </Stack>
         </Container>
