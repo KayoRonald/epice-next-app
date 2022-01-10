@@ -9,12 +9,11 @@ export const dataHome = [
     "color": 'purple.300'
   },
   {
-    "id": 1,
+    "id": 2,
     "title": "100% Online",
-    "text": "A primeira edição do EPICE (Encontro Picuiense de Computação e Eletrônica) aconteceu em 2020 com a proposta de trazer conteúdo técnico científico para os alunos dos cursos de Informática e de Eletrônica. Este evento é uma continuação do EPICO realizada pelos alunos e professores dos cursos de Informática e MSI. ",
-    "button": "Conheça mais",
+    "text": "O 'EPICE' é um evento que ocorre anualmente sempre trazendo novas pessoas de varias áreas da informática, sempre levando um pouco de conhecimento para os novatos que estão chegando e para aqueles que estão saindo. Epice, aprendizado contínuo.",
     "directions": "row-reverse",
     "img": "img/svg/undraw_remote_meeting_re_abe7.svg",
-    "color": '#f5f5f5'
+    "color": 'rgb(253 101 132)'
   }
 ]
