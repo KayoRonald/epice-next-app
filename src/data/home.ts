@@ -11,7 +11,7 @@ export const dataHome = [
   {
     "id": 2,
     "title": "100% Online",
-    "text": "O 'EPICE' é um evento que ocorre anualmente sempre trazendo novas pessoas de varias áreas da informática, sempre levando um pouco de conhecimento para os novatos que estão chegando e para aqueles que estão saindo. Epice, aprendizado contínuo."
+    "text": "O 'EPICE' é um evento que ocorre anualmente sempre trazendo novas pessoas de varias áreas da informática, sempre levando um pouco de conhecimento para os novatos que estão chegando e para aqueles que estão saindo. Epice, aprendizado contínuo.",
     "directions": "row-reverse",
     "img": "img/svg/undraw_remote_meeting_re_abe7.svg",
     "color": 'rgb(253 101 132)'
