@@ -1,3 +1,4 @@
+// conexão com banco de daods: https://www.remotemysql.com/phpmyadmin/
 import mysql from 'serverless-mysql';
 export const db = mysql({
   config: {

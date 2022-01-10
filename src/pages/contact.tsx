@@ -15,30 +15,8 @@ import axios from 'axios'
 import { Input, FormHeader } from '../components/';
 const Contact: React.FC = () => {
   const toast = useToast()
-  // const sendEmail = (e: any) => {
-  //   e.preventDefault();
-  //   emailjs.sendForm('service_07ntefs', 'template_bqyc7jw', e.target, 'user_O8HA1TiXfeemZl40MONHN')
-  //     .then((result) => {
-  //       toast({
-  //         title: 'Enviado com sucesso.',
-  //         description: "Aguarde alguns dias receber a sua resposta.",
-  //         status: 'success',
-  //         duration: 9000,
-  //         isClosable: true,
-  //       })
-  //     }, (error) => {
-  //       toast({
-  //         title: 'Não foi possível cadastrar.',
-  //         description: "Ocorreu um erro com nossa api :(",
-  //         status: 'error',
-  //         duration: 5000,
-  //         isClosable: true,
-  //       })
-  //     });
-  //   e.target.reset()
-  // };
   const [name, setName] = React.useState<string>('');
-  const [email, setEmail] = React.useState<any>('');
+  const [email, setEmail] = React.useState<string>('');
   const [subject, setSubject] = React.useState<string>('');
   const [message, setMessage] = React.useState<string>('');
   const [loading, setLoading] = React.useState<boolean>(false);
