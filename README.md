@@ -1,5 +1,5 @@
 <h1 align="center">
-    <strong>Epice <img src="public/img/logo.png" alt="Epice" width="40px"/></strong>
+    <strong>Epice</strong>
 </h1>
 <p align="center">
 Aplicações demonstradas/desenvolvidas no EPICE 2021
@@ -89,6 +89,39 @@ npm run dev
 ```
 
 <hr/>
+
+## 🎲 Banco de dados
+
+Para realizar a conexão com banco de daod, basta alterar essas informações ou usar os serviços do remoteMySql
+
+```ts
+// conexão com banco de daods: https://www.remotemysql.com/phpmyadmin/
+import mysql from 'serverless-mysql';
+export const db = mysql({
+  config: {
+    host: process.env.MYSQL_HOST,
+    database: process.env.MYSQL_DATABASE,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD
+  }
+});
+```
+No arquivo `api/subscription/index.tsx`, é onde vai ser feito o cadastro dos usuários.
+```ts
+  try {
+    const results = await db.query(
+      `INSERT INTO EPICEDB (name,email,curso) VALUES('${name}', '${email}', '${curso}')`
+    );
+    await db.end();
+    console.log(results)
+    return res.status(200).send('')
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json({ message: 'Falha na conexão code erro `EMAIL-300`' });
+  }
+};
+```
+
 
 <p align="center">
   <img src="https://www.rlogical.com/wp-content/uploads/2021/08/Rlogical-Blog-Images-thumbnail.png" width="150" title="Nextjs">
