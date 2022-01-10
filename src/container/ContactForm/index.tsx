@@ -2,17 +2,16 @@ import React from 'react';
 import {
   Box, Container, SimpleGrid, Stack, Heading,
   AvatarGroup, Text, Avatar, Button, AvatarBadge,
-  useColorModeValue, Image as Img, Flex, useToast
+  useColorModeValue, Image as Img, Flex, useToast, Select, FormLabel, FormControl
 } from '@chakra-ui/react';
 import { AiOutlineSend, AiOutlineUserAdd, AiOutlineMail } from 'react-icons/ai'
-import { IoMdSchool } from 'react-icons/io'
-import Input from '../../components/Input';
+import { Input } from '../../components/';
 import { palestrantes } from '../../data/palestrante';
 import axios from 'axios';
 
 export default function Form() {
   const [name, setName] = React.useState<string>('');
-  const [email, setEmail] = React.useState<any>('');
+  const [email, setEmail] = React.useState<string>('');
   const [curso, setCurso] = React.useState<string>('');
   const [loading, setLoading] = React.useState<boolean>(false);
   const toast = useToast()
@@ -27,14 +26,14 @@ export default function Form() {
     if (name !== '' && email !== '' && curso !== '') {
       try {
         setLoading(true)
-         await axios.post('/api/subscription', data)
-          toast({
-            title: 'Cadastrado com sucesso.',
-            description: "Aguarde alguns dias para realização do evento.",
-            status: 'success',
-            duration: 9000,
-            isClosable: true,
-          })
+        await axios.post('/api/subscription', data)
+        toast({
+          title: 'Cadastrado com sucesso.',
+          description: "Aguarde alguns dias para realização do evento.",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
       } catch (error: any) {
         toast({
           title: 'Não foi possível cadastrar.',
@@ -138,13 +137,23 @@ export default function Form() {
                 />
               </Box>
               <Box>
-                <Input
-                  placeholder="Ex: INFO, Eletrônica, Visitante..."
-                  txt="name do curso"
-                  name="course"
-                  children={<IoMdSchool />}
-                  onChange={(e) => setCurso(e.target.value)}
-                />
+                <FormControl>
+                  <FormLabel
+                    color={useColorModeValue("#18216d", "white")}
+                  >
+                    Escolha o curso que você faz
+                  </FormLabel>
+                  <Select
+                    placeholder="Ex: INFO, Eletrônica, Visitante..."
+                    required
+                    onChange={(e) => setCurso(e.target.value)}
+                    backgroundColor={useColorModeValue("white", "gray.800")}
+                  >
+                    <option value="INFO">INFO</option>
+                    <option value="Eletrônica">Eletrônica</option>
+                    <option value="Visitante">Visitante</option>
+                  </Select>
+                </FormControl>
               </Box>
               <Button
                 type="submit"
