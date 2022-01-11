@@ -35,9 +35,17 @@ export default function Form() {
           isClosable: true,
         })
       } catch (error: any) {
+        let message: string
+        switch (error.message) {
+          case 'Request failed with status code 400':
+            message = `Olá, ${name.split(' ')[0]}. Mas este Email já cadastrado`
+            break
+          default:
+            message = 'ocorreu alguma falha em nossa api :('
+        }
         toast({
           title: 'Não foi possível cadastrar.',
-          description: error.message || error,
+          description: message,
           status: 'error',
           duration: 5000,
           isClosable: true,

@@ -21,6 +21,8 @@ export default async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
     return res.status(200).send('')
   } catch (error) {
     console.log(error);
-    return res.status(400).json({ message: 'Falha na conexão code erro `EMAIL-300`' });
+    return res.status(400).json({
+      message: 'Falha na conexão code erro `EMAIL-300`'
+    });
   }
 };

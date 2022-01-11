@@ -1,5 +1,5 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer'
 
 interface ExtendedNextApiRequest extends NextApiRequest {
@@ -39,9 +39,13 @@ export default (req: ExtendedNextApiRequest, res: NextApiResponse) => {
   }
   transporter.sendMail(emailSend, function (error, info) {
     if (error) {
-      return res.status(400).json({ message: 'Falha na conexão code erro `EMAIL-300`' });
+      return res.status(400).json({
+        message: 'Falha na conexão code erro `EMAIL-300`'
+      });
     } else {
-      return res.status(200).json({ message: 'sucesso' });;
+      return res.status(200).json({
+        message: 'sucesso'
+      });;
     }
   });
 }
