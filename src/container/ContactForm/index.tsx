@@ -38,7 +38,7 @@ export default function Form() {
         let message: string
         switch (error.message) {
           case 'Request failed with status code 400':
-            message = `Olá, ${name.split(' ')[0]}. Mas este Email já cadastrado`
+            message = `Olá, ${name.split(' ')[0]}. Mas este Email já está cadastrado.`
             break
           default:
             message = 'ocorreu alguma falha em nossa api :('
