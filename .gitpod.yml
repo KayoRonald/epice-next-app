@@ -10,6 +10,6 @@ ports:
 
 github:
   prebuilds:
-    master: true
+    main: true
     pullRequestsFromForks: true
     addLabel:  prebuilt-in-gitpod
