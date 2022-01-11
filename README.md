@@ -104,7 +104,7 @@ MYSQL_PASSWORD=
 PASS_GMAIL=
 ```
 
-Para realizar a conexão com banco de daod, basta alterar essas informações ou usar os serviços do remoteMySql
+Para realizar a conexão com banco de dados, basta alterar essas informações ou usar os serviços do remoteMySql
 
 ```ts
 // conexão com banco de daods: https://www.remotemysql.com/phpmyadmin/
