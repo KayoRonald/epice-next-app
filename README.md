@@ -125,11 +125,12 @@ No arquivo `api/subscription/index.tsx`, é onde vai ser feito o cadastro dos us
 
 Comece com seu próprio projeto usando o gitpod
 
-<a href="https://gitpod.io/#https://github.com/gitpod-io/template-python-django">
 <p align="center">
-<img src="https://gitpod.io/button/open-in-gitpod.svg" />
+  <a href="https://gitpod.io/#https://github.com/gitpod-io/template-python-django">
+    <img src="https://gitpod.io/button/open-in-gitpod.svg" />
+    <h3 align="center">gitpod</h3>
+  </a>
 </p>
-</a>
 
 <hr/>
 
