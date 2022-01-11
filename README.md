@@ -138,7 +138,7 @@ No arquivo `api/subscription/index.tsx`, é onde vai ser feito o cadastro dos us
 Comece com seu próprio projeto usando o gitpod
 
 <p align="center">
-  <a href="https://gitpod.io/#https://github.com/gitpod-io/template-python-django">
+  <a href="https://gitpod.io/#https://github.com/KayoRonald/epice-next-app">
     <img src="https://gitpod.io/button/open-in-gitpod.svg" />
     <h3 align="center">gitpod</h3>
   </a>
