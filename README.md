@@ -90,7 +90,19 @@ npm run dev
 
 <hr/>
 
-## 🎲 Banco de dados
+## 🎲 Banco de dados e Nodemailer
+ 
+Você pode criar uma conta no site: remotemysql.com, e usar o banco de dados que ele oferece. E colocar suas credenciais que ele deu.
+Coloque suas informações dentro do arquivo `.env` na riaz de seu projeto. Caso você queria, pode ser realizado o envio de email usando o nodemailer, basta
+colocar seu email e senha do seu gmail.
+
+```.env
+MYSQL_HOST=
+MYSQL_DATABASE=
+MYSQL_USER=
+MYSQL_PASSWORD=
+PASS_GMAIL=
+```
 
 Para realizar a conexão com banco de daod, basta alterar essas informações ou usar os serviços do remoteMySql
 
