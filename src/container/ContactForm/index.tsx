@@ -37,7 +37,7 @@ export default function Form() {
       } catch (error: any) {
         let message: string
         switch (error.message) {
-          case 'Request failed with status code 400':
+          case 'Request failed with status code 406':
             message = `Olá, ${name.split(' ')[0]}. Mas este Email já está cadastrado.`
             break
           default:
