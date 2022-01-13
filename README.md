@@ -97,10 +97,12 @@ Coloque suas informações dentro do arquivo `.env` na riaz de seu projeto. Caso
 colocar seu email e senha do seu gmail.
 
 ```.env
+# conexão com banco de dado
 MYSQL_HOST=
 MYSQL_DATABASE=
 MYSQL_USER=
 MYSQL_PASSWORD=
+# conexão com gmail
 PASS_GMAIL=
 ```
 
