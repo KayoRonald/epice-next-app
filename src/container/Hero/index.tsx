@@ -11,6 +11,7 @@ import {
   Button
 } from '@chakra-ui/react';
 import { Link } from 'react-scroll';
+import { MotionBox } from "../../components/";
 const DURATION = 1000;
 
 export default function HomeHero() {
@@ -80,28 +81,35 @@ export default function HomeHero() {
             </Link>
           </Stack>
         </Stack>
-        <Flex
-          flex={1}
-          justify={'center'}
-          align={'center'}
-          w={'full'}>
-          <Box
-            rounded={'2xl'}
-            width={'full'}
-          >
-            <Image
-              alt={'Hero Image'}
-              fit={'cover'}
-              align={'center'}
-              w={'100%'}
-              h={'100%'}
-              loading="lazy"
-              src={
-                '/img/svg/undraw_group_video_re_btu7.svg'
-              }
-            />
-          </Box>
-        </Flex>
+        <MotionBox
+          animate={{ y: 20 }}
+          transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
+          width={["100%", "70%", "60%", "60%"]}
+          margin="0 auto"
+        >
+          <Flex
+            flex={1}
+            justify={'center'}
+            align={'center'}
+            w={'full'}>
+            <Box
+              rounded={'2xl'}
+              width={'full'}
+            >
+              <Image
+                alt={'Hero Image'}
+                fit={'cover'}
+                align={'center'}
+                w={'100%'}
+                h={'100%'}
+                loading="lazy"
+                src={
+                  '/img/svg/undraw_group_video_re_btu7.svg'
+                }
+              />
+            </Box>
+          </Flex>
+        </MotionBox>
       </Stack>
       <Center>
         <span className="scroll-btn">
