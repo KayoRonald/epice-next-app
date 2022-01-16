@@ -28,3 +28,5 @@ export interface InputProps extends ChakraInputProps {
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
 }
+
+export type Merge<P, T> = Omit<P, keyof T> & T;
