@@ -1,24 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import nodemailer from 'nodemailer'
-
-interface ExtendedNextApiRequest extends NextApiRequest {
-  body: {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  };
-};
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  secure: false,
-  auth: {
-    user: process.env.gmail,
-    pass: process.env.PASS_GMAIL
-  },
-  tls: { rejectUnauthorized: false }
-});
+import type { NextApiResponse } from 'next';
+import { ExtendedNextApiRequest } from '../../../utils/interface'
+import { transporter } from '../../../utils/email'
 
 export default (req: ExtendedNextApiRequest, res: NextApiResponse) => {
   const { name, email, subject, message } = req.body

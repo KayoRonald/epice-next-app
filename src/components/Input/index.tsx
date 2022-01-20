@@ -7,7 +7,7 @@ import {
   FormControl,
   FormLabel
 } from '@chakra-ui/react';
-import { InputProps } from "../../types";
+import { InputProps } from "../../utils/types";
 const Input = ({ name, txt, placeholder, onChange, type,children }: InputProps) => {
   return (
     <FormControl>
