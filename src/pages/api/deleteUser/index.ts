@@ -1,10 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiResponse } from 'next'
 import { db } from '../../../connection'
-interface ExtendedNextApiRequest extends NextApiRequest {
-  body: {
-    email: string;
-  };
-};
+import { ExtendedNextApiRequest } from '../../../utils/interface'
 
 export default async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
   const { email } = req.body
