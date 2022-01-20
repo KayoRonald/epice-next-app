@@ -127,7 +127,7 @@ export default function Form() {
               <Box>
                 <Input
                   placeholder="Ex: João Nobrega"
-                  txt="name completo"
+                  txt="Nome completo"
                   name="name"
                   children={<AiOutlineUserAdd />}
                   type="text"
