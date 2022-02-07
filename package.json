@@ -8,10 +8,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.8.1",
+    "@chakra-ui/react": "^1.8.3",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "axios": "^0.25.0",
+    "clsx": "^1.1.1",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^5",
     "next": "12.0.10",
