@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import Head from 'next/head'
 import useSWR from 'swr'
