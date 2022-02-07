@@ -23,7 +23,6 @@ const Palestrantes = () => {
   const ic = useColorModeValue("#18216d", "white");
   // const { data, error } = useSWR<Props[]>('/api/', fetch)
   // const { data: data2 } = useSWR(null, fetch)
-  console.log(data)
   return (
     <Box as="section" id="palestras">
       <Box>

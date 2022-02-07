@@ -98,8 +98,8 @@ export default function HomeHero() {
             >
               <Image
                 alt={'Hero Image'}
-                fit={'cover'}
-                align={'center'}
+                objectFit={'cover'}
+                alignItems='center'
                 w={'100%'}
                 h={'100%'}
                 loading="lazy"

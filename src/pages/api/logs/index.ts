@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { palestrantes } from '../../../data/palestrante'
+import { dataLogs } from '../../../data/logs'
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json(palestrantes)
+  res.status(200).json(dataLogs.reverse())
 }
