@@ -1840,9 +1840,9 @@ follow-redirects@^1.14.7:
   integrity sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==
 
 framer-motion@^6:
-  version "6.2.4"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.2.4.tgz#3d9c61be3fb8381a770efccdb56cc421de662979"
-  integrity sha512-1UfnSG4c4CefKft6QMYGx8AWt3TtaFoR/Ax4dkuDDD5BDDeIuUm7gesmJrF8GzxeX/i6fMm8+MEdPngUyPVdLA==
+  version "6.2.5"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.2.5.tgz#1384cd14abccf401e271f596a9bc986716d9253e"
+  integrity sha512-dsR1wmpMC0eUBHi0mqRc8qpA1ApmaTMKqpBoXx3cXLX5sTN+N/ZimHnBEzNHJmtYEAYJ+brtTXO6OYoLDRddNg==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
