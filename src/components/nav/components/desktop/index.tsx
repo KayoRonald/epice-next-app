@@ -35,6 +35,17 @@ export default function Desktop() {
         </chakra.span>
       </LinkButton>
       <LinkButton>
+        <chakra.span
+          paddingLeft='10px'
+        >
+          <Link
+            href="/changelog"
+          >
+            changelog
+          </Link>
+        </chakra.span>
+      </LinkButton>
+      <LinkButton>
         <LinkScroll
           to="mission"
           spy={false}

@@ -30,3 +30,13 @@ export interface InputProps extends ChakraInputProps {
 }
 
 export type Merge<P, T> = Omit<P, keyof T> & T;
+
+export type PropsQl = {
+  title: string
+  content: string
+  data: []
+  updatedBy: {
+    name: string
+    picture: string
+  }
+}
