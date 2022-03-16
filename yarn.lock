@@ -1381,14 +1381,14 @@
     "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
 
-"@graphql-codegen/import-types-preset@^2.1.12":
-  version "2.1.12"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/import-types-preset/-/import-types-preset-2.1.12.tgz#344baae04ed3e1f20ca44a88a061a264728048a2"
-  integrity sha512-nFipXzsLJnjZY06PKBovg1hxnueB5n/RSlBPYA29ymahEenNR1vMejbq8/+iuRoxexLuYVSVnJAEcqoBriUKrg==
+"@graphql-codegen/import-types-preset@^2.1.14":
+  version "2.1.14"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/import-types-preset/-/import-types-preset-2.1.14.tgz#4c9a48ee4a81deb104fd77772a4c9a89ce9f28c9"
+  integrity sha512-xy8CrZF5yFqnO/jodQizd1ejU38Y0NvxHA7eeKnlUzEKB28whVLxQO3d5rFYneAzrdG2O1IyZ1FyJ7W9HF7q/g==
   dependencies:
     "@graphql-codegen/add" "^3.1.1"
     "@graphql-codegen/plugin-helpers" "^2.4.0"
-    "@graphql-codegen/visitor-plugin-common" "2.7.1"
+    "@graphql-codegen/visitor-plugin-common" "2.7.3"
     tslib "~2.3.0"
 
 "@graphql-codegen/plugin-helpers@^2.3.2", "@graphql-codegen/plugin-helpers@^2.4.0", "@graphql-codegen/plugin-helpers@^2.4.1":
