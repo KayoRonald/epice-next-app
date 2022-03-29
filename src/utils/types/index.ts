@@ -17,6 +17,7 @@ export type MiddleBlockProps = {
 export interface InputProps extends ChakraInputProps {
   name: string;
   txt?: string;
+  isError?: boolean;
   placeholder: string;
   type?: string;
   value?: string;
