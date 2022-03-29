@@ -4,25 +4,11 @@ import {
   Stack, SimpleGrid, Avatar, Center, IconButton, useColorModeValue
 } from '@chakra-ui/react';
 import { Fade } from 'react-awesome-reveal'
-import useSWR, { SWRConfig } from 'swr'
 import { FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import Skeleton from '../../components/Skeleton'
 import { palestrantes as data} from '../../data/palestrante';
-// import fetch from '../../lib/fetch'
-// type Props = {
-//   id: number;
-//   avatar: string;
-//   name: string;
-//   frase: string;
-//   instagram?: string;
-//   email?: string;
-//   linkedinIn?: string;
-//   github?: string;
-// }
+
 const Palestrantes = () => {
   const ic = useColorModeValue("#18216d", "white");
-  // const { data, error } = useSWR<Props[]>('/api/', fetch)
-  // const { data: data2 } = useSWR(null, fetch)
   return (
     <Box as="section" id="palestras">
       <Box>

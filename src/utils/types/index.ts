@@ -15,18 +15,15 @@ export type MiddleBlockProps = {
 }
 
 export interface InputProps extends ChakraInputProps {
-  name: string;
+  name?: string;
   txt?: string;
   placeholder: string;
   type?: string;
   value?: string;
   children?: React.ReactNode;
   iconLeft?: React.ReactNode;
-  onChange?: (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => void;
+  ref?: React.Ref<any>
+  isError?: boolean;
 }
 
 export type Merge<P, T> = Omit<P, keyof T> & T;
