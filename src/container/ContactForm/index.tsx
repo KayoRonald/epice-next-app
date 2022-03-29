@@ -1,68 +1,12 @@
 import React from 'react';
 import {
   Box, Container, SimpleGrid, Stack, Heading,
-  AvatarGroup, Text, Avatar, Button, AvatarBadge,
-  useColorModeValue, Image as Img, Flex, useToast, Select, FormLabel, FormControl
+  AvatarGroup, Text, Avatar, AvatarBadge, Image as Img, Flex,
 } from '@chakra-ui/react';
-import { AiOutlineSend, AiOutlineUserAdd, AiOutlineMail } from 'react-icons/ai'
-import { Input } from '../../components/';
 import { palestrantes } from '../../data/palestrante';
-import axios from 'axios';
+import FormSubscription from './FormSubs';
 
 export default function Form() {
-  const [name, setName] = React.useState<string>('');
-  const [email, setEmail] = React.useState<string>('');
-  const [curso, setCurso] = React.useState<string>('');
-  const [loading, setLoading] = React.useState<boolean>(false);
-  const toast = useToast()
-
-  async function handleSubmit(event: React.FormEvent): Promise<void> {
-    event.preventDefault();
-    const data = {
-      name,
-      email,
-      curso,
-    };
-    if (name !== '' && email !== '' && curso !== '') {
-      try {
-        setLoading(true)
-        await axios.post('/api/subscription', data)
-        toast({
-          title: 'Cadastrado com sucesso.',
-          description: "Aguarde alguns dias para realização do evento.",
-          status: 'success',
-          duration: 9000,
-          isClosable: true,
-        })
-      } catch (error: any) {
-        let message: string
-        switch (error.message) {
-          case 'Request failed with status code 406':
-            message = `Olá, ${name.split(' ')[0]}. Mas este Email já está cadastrado.`
-            break
-          default:
-            message = 'ocorreu alguma falha em nossa api :('
-        }
-        toast({
-          title: 'Não foi possível cadastrar.',
-          description: message,
-          status: 'error',
-          duration: 5000,
-          isClosable: true,
-        })
-      } finally {
-        setLoading(false)
-      }
-    } else {
-      toast({
-        title: 'Não foi possível cadastrar.',
-        description: "Certifique-se de que todos os campos estejam preenchidos.",
-        status: 'error',
-        duration: 5000,
-        isClosable: true,
-      })
-    }
-  }
   return (
     <Box id="contact" as="section" mb={20}>
       <Container
@@ -113,72 +57,7 @@ export default function Form() {
             </AvatarGroup>
           </Stack>
         </Stack>
-        <Stack
-          bg={useColorModeValue('#d0d8dd', '#000')}
-          rounded={'xl'}
-          p={{ base: 4, sm: 6, md: 8 }}
-          spacing={{ base: 8 }}
-          width="94%"
-          maxWidth="700px"
-        >
-          <Heading color={useColorModeValue("#18216d", "white")}>Inscrição</Heading>
-          <Box as="form" mt={10} onSubmit={handleSubmit} method="POST">
-            <Stack spacing={4}>
-              <Box>
-                <Input
-                  placeholder="Ex: João Nobrega"
-                  txt="Nome completo"
-                  name="name"
-                  children={<AiOutlineUserAdd />}
-                  type="text"
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </Box>
-              <Box>
-                <Input
-                  placeholder="Ex: exemplo@gmail.com"
-                  txt="Coloque seu Email"
-                  name="email"
-                  children={<AiOutlineMail />}
-                  type="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Box>
-              <Box>
-                <FormControl>
-                  <FormLabel
-                    color={useColorModeValue("#18216d", "white")}
-                  >
-                    Escolha o curso que você faz
-                  </FormLabel>
-                  <Select
-                    placeholder="Ex: INFO, Eletrônica, Visitante..."
-                    required
-                    onChange={(e) => setCurso(e.target.value)}
-                    backgroundColor={useColorModeValue("white", "gray.800")}
-                  >
-                    <option value="INFO">INFO</option>
-                    <option value="Eletrônica">Eletrônica</option>
-                    <option value="Visitante">Visitante</option>
-                  </Select>
-                </FormControl>
-              </Box>
-              <Button
-                type="submit"
-                width="full"
-                mt={4}
-                outline="none"
-                _hover={{ backgroundColor: 'purple.600' }}
-                backgroundColor="purple.500"
-                leftIcon={<AiOutlineSend />}
-                isLoading={loading}
-                loadingText='Submitting'
-              >
-                Realizar inscrição
-              </Button>
-            </Stack>
-          </Box>
-        </Stack>
+        <FormSubscription />
       </Container>
     </Box>
   )
