@@ -12,14 +12,16 @@ export default async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
     console.log(results)
     return res.status(200).send('')
   } catch (error: any) {
+    console.log(error)
     console.log(error.code);
+    console.log(error.message);
     if (error.code === 'ER_DUP_ENTRY') {
       return res.status(406).json({
         message: 'Este email já está cadastrado em nosso banco de dados'
       });
     }
     return res.status(400).json({
-      message: 'Falha na conexão code erro `EMAIL-300`'
+      message: 'Falha na conexão com banco de dados'
     });
   }
 };

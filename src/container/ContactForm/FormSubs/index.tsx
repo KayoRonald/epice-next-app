@@ -2,13 +2,14 @@
 import React from 'react'
 import {
   Box, Stack, Heading, Button,
-  useColorModeValue, useToast, Select, FormLabel, FormControl,
+  useColorModeValue, createStandaloneToast , Select, FormLabel, FormControl,
   FormErrorMessage, Input as ChakraInput, InputGroup, InputLeftElement, InputRightElement
 } from '@chakra-ui/react';
 import { AiOutlineSend, AiOutlineUserAdd, AiOutlineMail } from 'react-icons/ai'
 import { BiErrorAlt } from 'react-icons/bi'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
+import { toast } from 'react-hot-toast';
 import { InputProps } from "../../../utils/types";
 import * as yup from "yup";
 import { ContainerInput } from '../../../components/';
@@ -27,7 +28,7 @@ const schema = yup.object().shape({
 
 export default function FormSubscription() {
   const [loading, setLoading] = React.useState<boolean>(false);
-  const toast = useToast()
+  const toast = createStandaloneToast()
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({
     resolver: yupResolver(schema)
   });
@@ -43,14 +44,8 @@ export default function FormSubscription() {
         isClosable: true,
       })
     } catch (error: any) {
-      let message: string
-      switch (error.message) {
-        case 'Request failed with status code 406':
-          message = `Opps Mas este Email já está cadastrado.`
-          break
-        default:
-          message = 'ocorreu alguma falha em nossa api :('
-      }
+      let message: string = error.response.data.message   
+      console.log(message)
       toast({
         title: 'Não foi possível cadastrar.',
         description: message,
