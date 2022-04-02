@@ -43,14 +43,8 @@ export default function FormSubscription() {
         isClosable: true,
       })
     } catch (error: any) {
-      let message: string
-      switch (error.message) {
-        case 'Request failed with status code 406':
-          message = `Opps Mas este Email já está cadastrado.`
-          break
-        default:
-          message = 'ocorreu alguma falha em nossa api :('
-      }
+      let message: string = error.response.data.message   
+      console.log(message)
       toast({
         title: 'Não foi possível cadastrar.',
         description: message,
