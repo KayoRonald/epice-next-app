@@ -5,8 +5,8 @@ import { ApolloProvider } from '@apollo/client'
 import { Chakra } from '../theme/'
 import { Styles } from '../styles/styles'
 import { NavBar } from '../components/'
-import { Footer } from '../container/'
-import { useApollo } from '../utils/apollo'
+import { Footer } from '@/container/index'
+import { useApollo } from '@/utils/apollo'
 
 const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   const client = useApollo(pageProps.initialApolloState)

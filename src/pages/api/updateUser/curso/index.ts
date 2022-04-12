@@ -1,6 +1,6 @@
 import type { NextApiResponse } from 'next'
-import excuteQuery from '../../../../lib/db';
-import { ExtendedNextApiRequest } from '../../../../utils/interface';
+import excuteQuery from '@/lib/db';
+import { ExtendedNextApiRequest } from '@/utils/interface';
 import *as yup from 'yup'
 const schema = yup.object().shape({
   email: yup.string().email("Email inválido.").required("Esse campo é obrigatório."),
