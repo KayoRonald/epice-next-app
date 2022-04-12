@@ -11,7 +11,7 @@ import {
   Button
 } from '@chakra-ui/react';
 import { Link } from 'react-scroll';
-import { MotionBox } from "../../components/";
+import { MotionBox } from "@/components/index";
 const DURATION = 1000;
 
 export default function HomeHero() {

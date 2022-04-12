@@ -3,7 +3,7 @@ import {
   Box, Container, SimpleGrid, Stack, Heading,
   AvatarGroup, Text, Avatar, AvatarBadge, Image as Img, Flex,
 } from '@chakra-ui/react';
-import { palestrantes } from '../../data/palestrante';
+import { palestrantes } from '@/data/palestrante';
 import FormSubscription from './FormSubs';
 
 export default function Form() {

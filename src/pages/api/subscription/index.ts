@@ -1,7 +1,7 @@
 import type { NextApiResponse } from 'next'
 import * as yup from 'yup'
-import excuteQuery from '../../../lib/db';
-import { ExtendedNextApiRequest } from '../../../utils/interface';
+import excuteQuery from '@/lib/db';
+import { ExtendedNextApiRequest } from '@/utils/interface';
 
 const schema = yup.object().shape({
   name: yup.string().required(),

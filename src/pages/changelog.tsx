@@ -4,9 +4,9 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { Box, Heading, Container, Text, useColorModeValue, Flex, ListItem, List, Avatar, Divider } from '@chakra-ui/react'
 import { FaCheck } from 'react-icons/fa'
-import { initializeApollo } from '../utils/apollo'
+import { initializeApollo } from '@/utils/apollo'
 import { GET_FEATURES } from '../graphql/getFeatures'
-import { PropsQl } from '../utils/types'
+import { PropsQl } from '@/utils/types'
 
 
 export const getStaticProps: GetStaticProps = async () => {
