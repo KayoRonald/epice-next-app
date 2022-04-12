@@ -9,7 +9,7 @@ export default async function excuteQuery(query: any, values: any) {
           throw Error('Este email não existe em nosso banco de dados')
         }
       })
-      .commit(); // execute the queries
+      .commit();// execute the queries
     console.log(results)
     return results
   } catch (error: any) {
