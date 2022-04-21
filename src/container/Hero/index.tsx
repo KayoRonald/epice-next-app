@@ -43,13 +43,13 @@ export default function HomeHero() {
                 bg: 'purple.400',
                 zIndex: -1,
               }}>
-              Epice
+              EPICE
             </Text>
-            <Text as="span">, 2021.</Text>
+            <Text as="span">, {new Date().getFullYear()}.</Text>
             <br />
           </Heading>
           <Text color={icp}>
-            Encontro Picuiense de Computação e Eletrônica do IFPB campus Picui!
+            Encontro Picuiense de Computação e Eletrônica do IFPB Campus Picuí!
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}

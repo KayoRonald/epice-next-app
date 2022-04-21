@@ -1,14 +1,14 @@
 <h1 align="center">
-    <strong>Epice</strong>
+    <strong>EPICE</strong>
 </h1>
 <p align="center">
-Aplicações demonstradas/desenvolvidas no EPICE 2021
+Aplicações demonstradas/desenvolvidas no EPICE 2022
 </p>
 <p align="center">
-    <img src="public/img/svg/undraw_everywhere_together_bdmn.svg" alt="Epice" width="450"/>
+    <img src="public/img/svg/undraw_everywhere_together_bdmn.svg" alt="EPICE" width="450"/>
 </p>
 
-O 'EPICE' é um evento que ocorre anualmente sempre trazendo novas pessoas de varias áreas da informática, sempre levando um pouco de conhecimento para os novatos que estão chegando e para aqueles que estão saindo. Epice, aprendizado contínuo.
+O 'EPICE' é um evento que ocorre anualmente sempre trazendo novas pessoas de várias áreas da informática, sempre levando um pouco de conhecimento para os novatos que estão chegando e para aqueles que estão saindo. Epice, aprendizado contínuo.
 
 ## 🤔 **Como contribuir?**
 

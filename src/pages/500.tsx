@@ -10,7 +10,7 @@ const InternalServer: NextPage = () => {
     <React.Fragment>
       <Head>
         <link rel="icon" href="/img/logo.png" />
-        <title>500: Erro interno do servidor</title>
+        <title>500 | Erro interno do servidor</title>
       </Head>
       <Flex id="anime" flexDirection="column" minHeight="100vh" width="full" align="center" justifyContent="center">
         <Box
@@ -33,9 +33,9 @@ const InternalServer: NextPage = () => {
               />
             </Center>
             <VStack justify="center" spacing="4" textAlign="center" as="article">
-              <Heading>500: Erro interno do servidor</Heading>
+              <Heading>500 | Erro interno do servidor</Heading>
               <Text fontSize={{ md: "xl" }}>
-                Ooops! o servidor encontrou uma condição inesperada que o impediu de atender à solicitação
+                Ooops! O servidor encontrou uma condição inesperada que o impediu de atender à solicitação
               </Text>
               <Stack
                 mb={10}
@@ -46,23 +46,12 @@ const InternalServer: NextPage = () => {
                 <NextLink href="/" passHref>
                   <Button
                     as="a"
-                    aria-label="Back to Home"
+                    aria-label="Voltar à tela inicial"
                     leftIcon={<FaHome />}
                     colorScheme="teal"
                     size="lg"
                   >
-                    Back to Home
-                  </Button>
-                </NextLink>
-                <NextLink href="/" passHref>
-                  <Button
-                    as="a"
-                    aria-label="Back to Home"
-                    leftIcon={<FaHome />}
-                    colorScheme="teal"
-                    size="lg"
-                  >
-                    Back to Home
+                    Voltar à tela inicial
                   </Button>
                 </NextLink>
               </Stack>

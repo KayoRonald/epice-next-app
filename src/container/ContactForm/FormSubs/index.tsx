@@ -71,7 +71,7 @@ export default function FormSubscription() {
         <Stack spacing={4}>
           <FormControl isInvalid={errors.name ? true : false}>
             <ContainerInput
-              txt="Coloque seu nome completo"
+              txt="Coloque seu Nome Completo"
             >
 
               <Input
@@ -106,7 +106,7 @@ export default function FormSubscription() {
             <FormLabel
               color={useColorModeValue("#18216d", "white")}
             >
-              Escolha o curso que você faz
+              Escolha o Curso que você faz
             </FormLabel>
             <Select
               placeholder="Ex: INFO, Eletrônica, Visitante..."

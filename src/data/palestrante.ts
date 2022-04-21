@@ -27,7 +27,7 @@ export const palestrantes = [
     "email": null,
     "linkedinIn": "/",
     "github": null,
-    "frase": "Experiências de trabalho remoto de engenheiro de software para Microsfot.",
+    "frase": "Experiências de trabalho remoto de engenheiro de software para Microsoft.",
   },
   {
     "id": 4,

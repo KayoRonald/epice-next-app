@@ -46,23 +46,12 @@ const PageNotFound: NextPage = () => {
                 <NextLink href="/" passHref>
                   <Button
                     as="a"
-                    aria-label="Back to Home"
+                    aria-label="Voltar à tela inicial"
                     leftIcon={<FaHome />}
                     colorScheme="teal"
                     size="lg"
                   >
-                    Back to Home
-                  </Button>
-                </NextLink>
-                <NextLink href="/" passHref>
-                  <Button
-                    as="a"
-                    aria-label="Back to Home"
-                    leftIcon={<FaHome />}
-                    colorScheme="teal"
-                    size="lg"
-                  >
-                    Back to Home
+                    Voltar à tela inicial
                   </Button>
                 </NextLink>
               </Stack>

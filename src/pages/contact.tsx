@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
       .required("Esse campo é obrigatório"),
     email: yup
       .string()
-      .email("Email inválido.")
+      .email("Email inválido")
       .required("Esse campo é obrigatório"),
     subject: yup
       .string()
@@ -133,10 +133,10 @@ const Contact: React.FC = () => {
                 </FormErrorMessage>
               </FormControl>
               <FormControl id="email" mt={2} isInvalid={errors.email ? true : false}>
-                <FormLabel>Email:</FormLabel>
+                <FormLabel>E-mail:</FormLabel>
                 <Input
                   type="email"
-                  placeholder="Insira o seu endereço de email"
+                  placeholder="Insira o seu endereço de e-mail"
                   {...register('email')}
                 />
                 <FormErrorMessage>
