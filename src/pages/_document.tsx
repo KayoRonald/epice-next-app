@@ -44,18 +44,18 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link rel="icon" href="/img/logo.png" />
           <meta name="theme-color" content="#000000" />
-          <meta name="description" content="EPICE 2021" />
-          <meta name="keywords" content="EPICE 2021" />
-          <meta property="og:title" content="EPICE 2021" />
+          <meta name="description" content={"EPICE " + new Date().getFullYear()} />
+          <meta name="keywords" content={"EPICE " + new Date().getFullYear()} />
+          <meta property="og:title" content={"EPICE " + new Date().getFullYear()} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="http://epice-app.vercel.app/" />
-          <meta property="og:description" content="EPICE 2021" />
+          <meta property="og:description" content={"EPICE " + new Date().getFullYear()} />
           <meta name="robots" content="index, follow" />
           <meta property="og:locale" content="en_EN" />
           <meta property="og:site_name" content="Landy" />
           <meta property="og:url" content="http://epice-app.vercel.app/" />
-          <meta property="twitter:title" content="EPICE 2021" />
-          <meta property="twitter:description" content="EPICE 2021" />
+          <meta property="twitter:title" content={"EPICE " + new Date().getFullYear()} />
+          <meta property="twitter:description" content={"EPICE " + new Date().getFullYear()} />
           <meta property="twitter:site" content="http://epice-app.vercel.app/" />
         </Head>
         <body>

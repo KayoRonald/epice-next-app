@@ -71,7 +71,7 @@ export default function Mobile() {
             <Link
               href="/changelog"
             >
-              changelog
+              Changelog
             </Link>
           </chakra.span>
         </LinkButton>

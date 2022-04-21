@@ -33,7 +33,7 @@ const Certificate = () => {
             bgClip='text'
             fontWeight='extrabold'
           >
-            Epice
+            EPICE
           </Heading>
           <Text>Encontro Picuiense de Computação e Eletrônica do IFPB</Text>
           <Flex

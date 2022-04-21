@@ -30,14 +30,14 @@ export default function NavHero() {
           <Flex>
             <chakra.a
               href="/"
-              title="EPICE 2021"
+              title={"EPICE " + new Date().getFullYear()}
               display="flex"
               alignItems="center"
             >
-              <VisuallyHidden>EPICE 2021</VisuallyHidden>
+              <VisuallyHidden>EPICE {new Date().getFullYear()}</VisuallyHidden>
             </chakra.a>
             <chakra.h1 as="a"  href="/" fontSize="xl" fontWeight="bold" ml="2" color={useColorModeValue("#18216d", "white")}>
-              EPICE 2021
+              EPICE {new Date().getFullYear()}
             </chakra.h1>
           </Flex>
           <HStack display="flex" alignItems="center" spacing={1}>

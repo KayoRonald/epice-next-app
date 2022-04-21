@@ -41,7 +41,7 @@ export default function Desktop() {
           <Link
             href="/changelog"
           >
-            changelog
+            Changelog
           </Link>
         </chakra.span>
       </LinkButton>
