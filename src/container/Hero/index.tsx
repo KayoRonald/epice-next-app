@@ -23,7 +23,7 @@ export default function HomeHero() {
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 10, md: 28 }}
+        py={{ base: 22, md: 28 }}
         direction={{ base: 'column', lg: 'row' }}>
         <Stack flex={1} spacing={{ base: 5, md: 10 }} mb={3}>
           <Heading
