@@ -1,5 +1,5 @@
 import React from 'react'
-import { InputProps as ChakraInputProps, ButtonProps as ChakaraProps } from '@chakra-ui/react'
+import { InputProps as ChakraInputProps } from '@chakra-ui/react'
 
 export type ChakraProps = {
   children?: React.ReactNode;
@@ -14,20 +14,12 @@ export type MiddleBlockProps = {
   img?: string;
 }
 
-export interface InputProps extends ChakraInputProps {
+export type InputProps = ChakraInputProps & {
   name: string;
   txt?: string;
   isError?: boolean;
-  placeholder: string;
-  type?: string;
-  value?: string;
   children?: React.ReactNode;
   iconLeft?: React.ReactNode;
-  onChange?: (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => void;
 }
 
 export type Merge<P, T> = Omit<P, keyof T> & T;
@@ -41,3 +33,9 @@ export type PropsQl = {
     picture: string
   }
 }
+
+export type FormValues = {
+  name: string;
+  email: string;
+  curso: string;
+};

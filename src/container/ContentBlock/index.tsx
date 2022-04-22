@@ -58,13 +58,37 @@ const Palestrantes = () => {
                           key={member.id}
                         />
                       </Center>
-                      <Stack spacing={3}>
+                      <Stack
+                        spacing={3}
+                        bg={useColorModeValue('#dfeafe', '#2c313d')}
+                        p={5}
+                        pos="relative"
+                        borderRight={2}
+                        _before={{
+                          content: `""`,
+                          w: 0,
+                          h: 0,
+                          borderLeft: 'solid transparent',
+                          borderLeftWidth: 16,
+                          borderRight: 'solid transparent',
+                          borderRightWidth: 16,
+                          borderTop: 'solid',
+                          borderTopWidth: 16,
+                          borderTopColor: useColorModeValue('#dfeafe', '#2c313d'),
+                          pos: 'absolute',
+                          top: '-16px',
+                          left: '50%',
+                          transform: 'translateX(-50%) rotate(540deg)',
+                        }}
+                      >
                         <Text fontWeight="bold" fontSize="md" color={ic}>
                           {member.name}
                         </Text>
-                        <Text color={ic} dangerouslySetInnerHTML={{
-                          __html: member.frase
-                        }} />
+                        <Text
+                          color={ic}
+                          dangerouslySetInnerHTML={{
+                            __html: member.frase
+                          }} />
                         <Center>
                           <Stack direction={'row'} spacing={3}>
                             <IconButton
@@ -109,14 +133,7 @@ const Palestrantes = () => {
                     </Stack>
                   </Box>
                 </Fade>
-              ))
-                //   <React.Fragment>
-                //     <Skeleton />
-                //     <Skeleton />
-                //     <Skeleton />
-                //     <Skeleton />
-                //   </React.Fragment>
-              }
+              ))}
             </SimpleGrid>
           </Stack>
         </Container>

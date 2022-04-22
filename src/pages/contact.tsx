@@ -19,10 +19,7 @@ import { InputProps } from "../utils/types";
 import { FormHeader } from '../components/';
 const Contact: React.FC = () => {
   // const toast = useToast()
-  // const [name, setName] = React.useState<string>('');
-  // const [email, setEmail] = React.useState<string>('');
-  // const [subject, setSubject] = React.useState<string>('');
-  // const [message, setMessage] = React.useState<string>('');
+
   type FormValues = {
     name: string;
     email: string;
