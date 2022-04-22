@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
       return {
         ...initialProps,
         styles: (
-          <React.Fragment key="key">
+          <React.Fragment>
             {initialProps.styles}
             {sheet.getStyleElement()}
           </React.Fragment>
@@ -51,8 +51,8 @@ export default class MyDocument extends Document {
           <meta property="og:url" content="http://epice-app.vercel.app/" />
           <meta property="og:description" content={"EPICE " + new Date().getFullYear()} />
           <meta name="robots" content="index, follow" />
-          <meta property="og:locale" content="en_EN" />
-          <meta property="og:site_name" content="Landy" />
+          <meta property="og:locale" content="PT-BR" />
+          <meta property="og:site_name" content="EPICE" />
           <meta property="og:url" content="http://epice-app.vercel.app/" />
           <meta property="twitter:title" content={"EPICE " + new Date().getFullYear()} />
           <meta property="twitter:description" content={"EPICE " + new Date().getFullYear()} />

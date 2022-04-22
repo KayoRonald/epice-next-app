@@ -3,27 +3,16 @@ import React from 'react'
 import {
   Box, Stack, Heading, Button,
   useColorModeValue, useToast, Select, FormLabel, FormControl,
-  FormErrorMessage, Input as ChakraInput, InputGroup, InputLeftElement, InputRightElement
+  FormErrorMessage,
 } from '@chakra-ui/react';
 import { AiOutlineSend, AiOutlineUserAdd, AiOutlineMail } from 'react-icons/ai'
-import { BiErrorAlt } from 'react-icons/bi'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
-import { InputProps } from "../../../utils/types";
-import * as yup from "yup";
-import { ContainerInput } from '../../../components/';
+import { ContainerInput } from '@/components/index';
 import axios from 'axios';
-type FormValues = {
-  name: string;
-  email: string;
-  curso: string;
-};
-
-const schema = yup.object().shape({
-  name: yup.string().required("Esse campo é obrigatório."),
-  email: yup.string().email("Email inválido.").required("Esse campo é obrigatório."),
-  curso: yup.string().required("Esse campo é obrigatório."),
-})
+import { Input } from '@/components/Input';
+import { schema } from 'src/schema/index';
+import { FormValues } from '@/utils/types';
 
 export default function FormSubscription() {
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -73,7 +62,6 @@ export default function FormSubscription() {
             <ContainerInput
               txt="Coloque seu Nome Completo"
             >
-
               <Input
                 placeholder="Ex: João Nobrega"
                 type="text"
@@ -139,46 +127,3 @@ export default function FormSubscription() {
     </Stack>
   )
 }
-const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  return (
-    <InputGroup>
-      <InputLeftElement
-        width="3rem"
-        height="100%"
-        children={props.iconLeft}
-        color={useColorModeValue("#18216d", "purple.500")}
-      />
-      <ChakraInput
-        ref={ref}
-        type={props.type}
-        focusBorderColor="purple.500"
-        backgroundColor={useColorModeValue("white", "gray.800")}
-        border={0}
-        color={useColorModeValue("#18216d", "white")}
-        _placeholder={{
-          color: useColorModeValue("black", "white"),
-        }}
-        {...props}
-      />
-      {props.isError ? (
-        <InputRightElement children={<BiErrorAlt color='red'/>} />
-        ):(
-        <React.Fragment/ >
-      )}
-    </InputGroup>
-  )
-})
-// const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => (
-//   <ChakraInput BiErrorAlt
-//     ref={ref}
-//     type={props.type}
-//     focusBorderColor="purple.500"
-//     backgroundColor={useColorModeValue("white", "gray.800")}
-//     border={0}
-//     color={useColorModeValue("#18216d", "white")}
-//     _placeholder={{
-//       color: useColorModeValue("black", "white"),
-//     }}
-//     {...props}
-//   />
-// ));
