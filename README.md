@@ -150,9 +150,9 @@ Comece com seu próprio projeto usando o gitpod
 
 
 <p align="center">
-  <img src="https://www.rlogical.com/wp-content/uploads/2021/08/Rlogical-Blog-Images-thumbnail.png" width="100" title="Nextjs">
-  <img src="github/typescript.png" width="100" alt="TypeScript" title="TypeScript">
-  <img src="github/chakra-ui.png" width="100" alt="chakra" title="chakra"
+  <img src="img/nextjs.png" width="100" title="Nextjs">
+  <img src="img/typescript.png" width="100" alt="TypeScript" title="TypeScript">
+  <img src="img/chakra-ui.png" width="100" alt="chakra" title="chakra"
 </p>
 
 ### 📝 **Licença**
