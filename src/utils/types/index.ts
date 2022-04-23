@@ -17,9 +17,9 @@ export type MiddleBlockProps = {
 export type InputProps = ChakraInputProps & {
   name: string;
   txt?: string;
-  isError?: boolean;
+  iserror?: boolean;
   children?: React.ReactNode;
-  iconLeft?: React.ReactNode;
+  iconleft?: React.ReactNode;
 }
 
 export type Merge<P, T> = Omit<P, keyof T> & T;

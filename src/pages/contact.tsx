@@ -118,7 +118,7 @@ const Contact: React.FC = () => {
               text="Detalhe o seu problema"
             />
             <Box my={8} textAlign="left">
-              <FormControl id="nome" isInvalid={errors.name ? true : false}>
+              <FormControl id="nome" isInvalid={!!errors.name}>
                 <FormLabel>Nome:</FormLabel>
                 <Input
                   type="text"
@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
                   {errors.name?.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl id="email" mt={2} isInvalid={errors.email ? true : false}>
+              <FormControl id="email" mt={2} isInvalid={!!errors.email}>
                 <FormLabel>E-mail:</FormLabel>
                 <Input
                   type="email"
@@ -140,7 +140,7 @@ const Contact: React.FC = () => {
                   {errors.email?.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl id="descricao" mt={2} isInvalid={errors.subject ? true : false}>
+              <FormControl id="descricao" mt={2} isInvalid={!!errors.subject}>
                 <FormLabel>Descrição:</FormLabel>
                 <Input
                   type="text"
@@ -151,7 +151,7 @@ const Contact: React.FC = () => {
                   {errors.subject?.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl id="text" mt={2} isInvalid={errors.message ? true : false}>
+              <FormControl id="text" mt={2} isInvalid={!!errors.message}>
                 <FormLabel>Texto:</FormLabel>
                 <Textarea
                   placeholder="Coloque o seu texto aqui"

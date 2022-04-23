@@ -11,7 +11,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
       <InputLeftElement
         width="3rem"
         height="100%"
-        children={props.iconLeft}
+        children={props.iconleft}
         color={useColorModeValue("#18216d", "purple.500")}
       />
       <ChakraInput
@@ -26,7 +26,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         }}
         {...props}
       />
-      {props.isError ? (
+      {props.iserror ? (
         <InputRightElement children={<BiErrorAlt color='red'/>} />
         ):(
         <React.Fragment/ >

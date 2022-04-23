@@ -58,7 +58,7 @@ export default function FormSubscription() {
       <Heading color={useColorModeValue("#18216d", "white")}>Inscrição</Heading>
       <Box as="form" mt={10} onSubmit={handleSubmit(onSubmitHandler)}>
         <Stack spacing={4}>
-          <FormControl isInvalid={errors.name ? true : false}>
+          <FormControl isInvalid={!!errors.name}>
             <ContainerInput
               txt="Coloque seu Nome Completo"
             >
@@ -66,15 +66,15 @@ export default function FormSubscription() {
                 placeholder="Ex: João Nobrega"
                 type="text"
                 {...register('name')}
-                iconLeft={<AiOutlineUserAdd />}
-                isError={errors.name ? true : false}
+                iconleft={<AiOutlineUserAdd />}
+                iserror={errors.name ? true : undefined}
               />
             </ContainerInput>
             <FormErrorMessage>
               {errors.name?.message}
             </FormErrorMessage>
           </FormControl>
-          <FormControl isInvalid={errors.email ? true : false}>
+          <FormControl isInvalid={!!errors.email}>
             <ContainerInput
               txt="Coloque seu Email"
             >
@@ -82,15 +82,15 @@ export default function FormSubscription() {
                 placeholder="Ex: exemplo@gmail.com"
                 type="text"
                 {...register('email')}
-                isError={errors.email ? true : false}
-                iconLeft={<AiOutlineMail />}
+                iserror={errors.email ? true : undefined}
+                iconleft={<AiOutlineMail />}
               />
             </ContainerInput>
             <FormErrorMessage>
               {errors.email?.message}
             </FormErrorMessage>
           </FormControl>
-          <FormControl isInvalid={errors.curso ? true : false}>
+          <FormControl isInvalid={!!errors.curso}>
             <FormLabel
               color={useColorModeValue("#18216d", "white")}
             >
