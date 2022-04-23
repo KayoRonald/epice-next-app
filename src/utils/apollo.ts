@@ -24,7 +24,6 @@ export function initializeApollo(initialState = {}) {
   if (initialState) {
     apolloClientGlobal.cache.restore(initialState)
   }
-
   // se estiver no ssr retornar o apolloClientGlobal direto (sempre inicializando no SSR com cache limpo)
   if (typeof window === 'undefined') return apolloClientGlobal
 
@@ -34,8 +33,7 @@ export function initializeApollo(initialState = {}) {
   // por fim retorna o objeto do apolloClient
   return apolloClient
 }
-
-// utilizano um memorize para caso o initialState nao mudar nao ficar reinicializando
+// utilizano um memorize para caso o initialState não mudar, e não ficar reinicializando
 export function useApollo(initialState = {}) {
   const store = useMemo(() => initializeApollo(initialState), [initialState])
   return store
