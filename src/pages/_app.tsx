@@ -17,7 +17,7 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
         if (localStorage.getItem('epice-install-prompt')) {
           e.preventDefault()
         } else {
-          localStorage.setItem('epice-install-prompt', true)
+          localStorage.setItem('epice-install-prompt', 'true')
         }
       })
     }
