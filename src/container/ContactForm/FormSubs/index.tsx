@@ -32,7 +32,7 @@ export default function FormSubscription() {
         isClosable: true,
       })
     } catch (error: any) {
-      let message: unknown = error.response.data.message   
+      let message: string = error.response.data.message   
       console.log(message)
       toast({
         title: 'Não foi possível cadastrar.',
