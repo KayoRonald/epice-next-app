@@ -13,7 +13,13 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js')
-      window.addEventListener('beforeinstallprompt', () => {})
+      window.addEventListener('beforeinstallprompt', (e) => {
+        if (localStorage.getItem('epice-install-prompt')) {
+          e.preventDefault()
+        } else {
+          localStorage.setItem('epice-install-prompt', true)
+        }
+      })
     }
   })
 

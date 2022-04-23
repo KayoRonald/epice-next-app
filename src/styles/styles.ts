@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 export const Styles = createGlobalStyle`
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
     div.chat-wrapper[opened="true"]{
       height:490px !important;
     }
