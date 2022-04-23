@@ -54,26 +54,14 @@ export default function Mobile() {
           </LinkScroll>
         </LinkButton>
         <LinkButton>
-          <chakra.span
-            paddingLeft='10px'
-          >
-            <Link
-              href="/contact"
-            >
-              Contato
-            </Link>
-          </chakra.span>
+          <Link href="/contact">
+            Contato
+          </Link>
         </LinkButton>
         <LinkButton>
-          <chakra.span
-            paddingLeft='10px'
-          >
-            <Link
-              href="/changelog"
-            >
-              Changelog
-            </Link>
-          </chakra.span>
+          <Link href="/changelog">
+            Changelog
+          </Link>
         </LinkButton>
         <LinkButton>
           <LinkScroll
@@ -82,9 +70,6 @@ export default function Mobile() {
             smooth="easeInOutQuart"
             duration={DURATION}
             activeClass="active"
-            style={{
-              paddingLeft: '10px'
-            }}
           >
             Programação
           </LinkScroll>
