@@ -9,13 +9,13 @@ import {
 
 type PropsBox = {
   txt: string;
-  iconInput?: React.ReactNode;
-  iconLeft?: React.ReactNode;
+  iconinput?: React.ReactNode;
+  iconleft?: React.ReactNode;
   children?: React.ReactNode;
-  isError?: boolean;
+  iserror?: boolean;
 }
 
-const ContainerInput = ({ txt, iconInput, children }: PropsBox) => {
+const ContainerInput = ({ txt, iconinput, children }: PropsBox) => {
   return (
     <React.Fragment>
       <FormLabel color={useColorModeValue("#18216d", "white")}>{txt}</FormLabel>
