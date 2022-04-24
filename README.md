@@ -24,17 +24,14 @@ O 'EPICE' é um evento que ocorre anualmente sempre trazendo novas pessoas de v�
 
 Esse projeto foi feito utilizando as seguintes tecnologias:
 
-> - **[Nextjs](https://nextjs.org/)**
->
-> - **[Chakra-ui](https://chakra-ui.com/)**
->
-> - **[Styled Components](https://styled-components.com/)**
->  
-> - **[TypeScript](https://www.typescriptlang.org/)**
->
-> - **[serverless-mysql](https://www.serverless.com/plugins/serverless-mysql)**
->
-> - **[nodemailer](https://nodemailer.com/about/)**
+| Tecnologias | Sites |
+| ------ | ------ |
+| Nextjs | https://nextjs.org/ |
+| Chakra-ui | https://chakra-ui.com/ |
+| Styled Components | https://styled-components.com |
+| serverless | https://www.serverless.com/plugins/serverless-mysql] |
+| nodemailer | https://nodemailer.com/about/ |
+| TypeScript | https://www.typescriptlang.org/ |
 
 <hr/>
 
@@ -69,12 +66,12 @@ Abrindo o terminal, você pode executar o seguinte comando para entrar no diret�
 ```
 
 **3. Como instalar as dependências**
-
-Caso você queira, podera ser usado o yarn ou npm. 
+Nesse caso, você pode usar o yarn ou npm para instalar e rodar a aplicação.
 
 ```bash
 yarn 
 ```
+Mas se for usar o npm, e for mandar uma pullrequest, lembre-se de apagar o aqruivo package-lock.json (por causa da vercel, que vai mandar apagar)
 ```bash
 npm install
 ```
@@ -92,24 +89,20 @@ npm run dev
 
 ## 🎲 Banco de dados e Nodemailer
  
-Você pode criar uma conta no site: remotemysql.com, e usar o banco de dados que ele oferece. E colocar suas credenciais que ele deu.
-Coloque suas informações dentro do arquivo `.env` na riaz de seu projeto. Caso você queria, pode ser realizado o envio de email usando o nodemailer, basta
-colocar seu email e senha do seu gmail.
+### Banco de dados:
+Você pode criar uma conta no site: [remotemysql](remotemysql.com), e usar o banco de dados que ele oferece. E colocar suas credenciais no arquivo `.env` na riaz de seu projeto.
 
+Para realizar a conexão com banco de dados, basta alterar essas informações ou usar os serviços do remoteMySql
 ```.env
 # conexão com banco de dado
 MYSQL_HOST=
 MYSQL_DATABASE=
 MYSQL_USER=
 MYSQL_PASSWORD=
-# conexão com gmail
-PASS_GMAIL=
 ```
-
-Para realizar a conexão com banco de dados, basta alterar essas informações ou usar os serviços do remoteMySql
-
+Conexão com a base de dados
 ```ts
-// conexão com banco de daods: https://www.remotemysql.com/phpmyadmin/
+// conexão com banco de dados: https://www.remotemysql.com/phpmyadmin/
 import mysql from 'serverless-mysql';
 export const db = mysql({
   config: {
@@ -120,21 +113,52 @@ export const db = mysql({
   }
 });
 ```
-No arquivo `api/subscription/index.tsx`, é onde vai ser feito o cadastro dos usuários.
-```ts
-  try {
-    const results = await db.query(
-      `INSERT INTO EPICEDB (name,email,curso) VALUES('${name}', '${email}', '${curso}')`
-    );
-    await db.end();
-    console.log(results)
-    return res.status(200).send('')
-  } catch (error) {
-    console.log(error);
-    return res.status(400).json({ message: 'Falha na conexão code erro `EMAIL-300`' });
-  }
-};
+
+### Nodemailer
+Para utilizar o email é necessário usar o [oauth2](https://dev.to/chandrapantachhetri/sending-emails-securely-using-node-js-nodemailer-smtp-gmail-and-oauth2-g3a). Depois você pode configurar o projeto usando suas credenciais, ou usar outro sistema de envio de email como a sendgrid.
+```.env
+EMAIL=YOUR_GOOGLE_EMAIL_HERE
+REFRESH_TOKEN=PASTE_REFRESH_TOKEN_HERE
+CLIENT_SECRET=PASTE_CLIENT_SECRET_HERE
+CLIENT_ID=PASTE_CLIENT_ID_HERE
 ```
+
+Para evitar ataques de sql injection, foi retirado essa maneira de passar diretamente pela váriavel os valores
+
+```ts
+const result: any = await db.query('INSERT INTO EPICEDB (name,email,curso) VALUES('${name}', '${email}', '${curso}')'
+```
+Para evitar esses ataques, você pode mapear valores na matriz para espaços reservados (os pontos de interrogação) na mesma ordem em que são passados.
+
+```ts
+const result: any = await excuteQuery('INSERT INTO EPICEDB (name, email, curso) VALUES (?)', [[name, email, curso]]);
+```
+Para evitar a repetição de código, foi criada a função excuteQuery. 
+Onde recebe as querys passadas no arquivo `api/subscription/index.tsx`, como exemplo. Logo em seguida, 
+podemos executar ou mostrra uma mensagem de erro
+```ts
+import { db } from '../connection';
+
+export default async function excuteQuery(query: any, values: any) {
+  try {
+    const results = await db.transaction()
+      .query(query, values)
+      .query((rows: any) => {
+        if (rows.affectedRows == 0) {
+          throw Error('Este email não existe em nosso banco de dados')
+        }
+      })
+      .commit();// execute the queries
+    return results
+  } catch (error: any) {
+    if (error.code === 'ER_DUP_ENTRY') {
+      throw Error('Esse endereço de email já está em uso')
+    }
+    throw Error('Ops... Ocorreu algum erro :(')
+  }
+}
+```
+
 ## 🖥️ gitpod
 
 Comece com seu próprio projeto usando o gitpod
