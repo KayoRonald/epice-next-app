@@ -37,7 +37,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/node": "17.0.25",
+    "@types/node": "17.0.26",
     "@types/nodemailer": "^6.4.4",
     "@types/react": "17.0.43",
     "@types/react-scroll": "^1.8.3",
