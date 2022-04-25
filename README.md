@@ -29,7 +29,7 @@ Esse projeto foi feito utilizando as seguintes tecnologias:
 | Nextjs | https://nextjs.org/ |
 | Chakra-ui | https://chakra-ui.com/ |
 | Styled Components | https://styled-components.com |
-| serverless | https://www.serverless.com/plugins/serverless-mysql] |
+| serverless | https://www.serverless.com/plugins/serverless-mysql |
 | nodemailer | https://nodemailer.com/about/ |
 | TypeScript | https://www.typescriptlang.org/ |
 
