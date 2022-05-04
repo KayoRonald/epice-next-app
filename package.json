@@ -15,7 +15,7 @@
     "@emotion/styled": "^11",
     "@headlessui/react": "^1.5.0",
     "@hookform/resolvers": "^2.8.8",
-    "@lottiefiles/react-lottie-player": "^3.4.4",
+    "@lottiefiles/react-lottie-player": "^3.4.5",
     "axios": "^0.27.2",
     "clsx": "^1.1.1",
     "emailjs-com": "^3.2.0",
@@ -37,7 +37,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/node": "17.0.29",
+    "@types/node": "17.0.31",
     "@types/nodemailer": "^6.4.4",
     "@types/react": "17.0.43",
     "@types/react-scroll": "^1.8.3",
