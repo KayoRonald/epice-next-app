@@ -9,11 +9,11 @@
     "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@apollo/client": "^3.6.0",
+    "@apollo/client": "^3.6.2",
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@headlessui/react": "^1.5.0",
+    "@headlessui/react": "^1.6.1",
     "@hookform/resolvers": "^2.8.8",
     "@lottiefiles/react-lottie-player": "^3.4.4",
     "axios": "^0.27.2",
