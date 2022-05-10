@@ -913,10 +913,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@lottiefiles/react-lottie-player@^3.4.4":
-  version "3.4.4"
-  resolved "https://registry.yarnpkg.com/@lottiefiles/react-lottie-player/-/react-lottie-player-3.4.4.tgz#00d47e8dd33fb7a2a67a2e016ff3cbc56023eb90"
-  integrity sha512-FwidRwQy7JMlyQrgpcOcAo8le2e8XJSlFfOh5GHGwAXwY608Ihh2r2uRYzV2ea3JAbMgKhGMNPuL4gpVXEjnGQ==
+"@lottiefiles/react-lottie-player@^3.4.6":
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/@lottiefiles/react-lottie-player/-/react-lottie-player-3.4.6.tgz#fcc9e27883459bcedd6bc6bf5cb3589150df89d7"
+  integrity sha512-Oafv8SecI7jpc+IbR9uEPTbTyPZzI0xn+/kZNFYhO0VJgOsx6tG8OGesdS+Eig7ke8n8K8ZUQAlNrEbQJhwucA==
   dependencies:
     lottie-web "^5.7.8"
 
