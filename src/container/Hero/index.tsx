@@ -2,7 +2,6 @@ import {
   Container,
   Stack,
   Flex,
-  Box,
   Heading,
   Text,
   Img as Image,
@@ -12,8 +11,6 @@ import {
 } from '@chakra-ui/react';
 import { Link } from 'react-scroll';
 import { MotionBox } from "@/components/index";
-import { Player } from '@lottiefiles/react-lottie-player';
-import animationData2 from '../../data/animation/88367-students-jumping.json';
 const DURATION = 1000;
 
 export default function HomeHero() {
@@ -23,7 +20,6 @@ export default function HomeHero() {
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        mt={10}
         py={{ base: 20, md: 28 }}
         direction={{ base: 'column', lg: 'row' }}>
         <Stack flex={1} spacing={{ base: 5, md: 10 }} mb={3}>
@@ -84,25 +80,19 @@ export default function HomeHero() {
             </Link>
           </Stack>
         </Stack>
-        {/* <MotionBox
+        <MotionBox
           animate={{ y: 20 }}
           transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
           width={["100%", "70%", "60%", "60%"]}
           margin="0 auto"
-        > */}
+        >
           <Flex
             flex={1}
             justify={'center'}
             align={'center'}
             w={'full'}>
             <Center>
-              <Player
-                autoplay
-                loop
-                src={animationData2}
-                style={{ height: "auto", width: "fit-content" }}
-              />
-              {/* <Image
+               <Image
                 alt={'Hero Image'}
                 objectFit={'cover'}
                 alignItems='center'
@@ -112,10 +102,10 @@ export default function HomeHero() {
                 src={
                   '/img/svg/undraw_group_video_re_btu7.svg'
                 }
-              /> */}
+              />
             </Center>
           </Flex>
-        {/* </MotionBox> */}
+        </MotionBox>
       </Stack>
       <Center>
         <span className="scroll-btn">

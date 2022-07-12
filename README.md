@@ -29,8 +29,6 @@ Esse projeto foi feito utilizando as seguintes tecnologias:
 | Nextjs | https://nextjs.org/ |
 | Chakra-ui | https://chakra-ui.com/ |
 | Styled Components | https://styled-components.com |
-| serverless | https://www.serverless.com/plugins/serverless-mysql |
-| nodemailer | https://nodemailer.com/about/ |
 | TypeScript | https://www.typescriptlang.org/ |
 
 <hr/>
@@ -86,78 +84,6 @@ npm run dev
 ```
 
 <hr/>
-
-## 🎲 Banco de dados e Nodemailer
- 
-### Banco de dados:
-Você pode criar uma conta no site: [remotemysql](remotemysql.com), e usar o banco de dados que ele oferece. E colocar suas credenciais no arquivo `.env` na riaz de seu projeto.
-
-Para realizar a conexão com banco de dados, basta alterar essas informações ou usar os serviços do remoteMySql
-```.env
-# conexão com banco de dado
-MYSQL_HOST=
-MYSQL_DATABASE=
-MYSQL_USER=
-MYSQL_PASSWORD=
-```
-Conexão com a base de dados
-```ts
-// conexão com banco de dados: https://www.remotemysql.com/phpmyadmin/
-import mysql from 'serverless-mysql';
-export const db = mysql({
-  config: {
-    host: process.env.MYSQL_HOST,
-    database: process.env.MYSQL_DATABASE,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD
-  }
-});
-```
-
-### Nodemailer
-Para utilizar o email é necessário usar o [oauth2](https://dev.to/chandrapantachhetri/sending-emails-securely-using-node-js-nodemailer-smtp-gmail-and-oauth2-g3a). Depois você pode configurar o projeto usando suas credenciais, ou usar outro sistema de envio de email como a sendgrid.
-```.env
-EMAIL=YOUR_GOOGLE_EMAIL_HERE
-REFRESH_TOKEN=PASTE_REFRESH_TOKEN_HERE
-CLIENT_SECRET=PASTE_CLIENT_SECRET_HERE
-CLIENT_ID=PASTE_CLIENT_ID_HERE
-```
-
-Para evitar ataques de sql injection, foi retirado essa maneira de passar diretamente pela váriavel os valores
-
-```ts
-const result: any = await db.query('INSERT INTO EPICEDB (name,email,curso) VALUES('${name}', '${email}', '${curso}')'
-```
-Para evitar esses ataques, você pode mapear valores na matriz para espaços reservados (os pontos de interrogação) na mesma ordem em que são passados.
-
-```ts
-const result: any = await excuteQuery('INSERT INTO EPICEDB (name, email, curso) VALUES (?)', [[name, email, curso]]);
-```
-Para evitar a repetição de código, foi criada a função excuteQuery. 
-Onde recebe as querys passadas no arquivo `api/subscription/index.tsx`, como exemplo. Logo em seguida, 
-podemos executar ou mostrra uma mensagem de erro
-```ts
-import { db } from '../connection';
-
-export default async function excuteQuery(query: any, values: any) {
-  try {
-    const results = await db.transaction()
-      .query(query, values)
-      .query((rows: any) => {
-        if (rows.affectedRows == 0) {
-          throw Error('Este email não existe em nosso banco de dados')
-        }
-      })
-      .commit();// execute the queries
-    return results
-  } catch (error: any) {
-    if (error.code === 'ER_DUP_ENTRY') {
-      throw Error('Esse endereço de email já está em uso')
-    }
-    throw Error('Ops... Ocorreu algum erro :(')
-  }
-}
-```
 
 ## 🖥️ gitpod
 
