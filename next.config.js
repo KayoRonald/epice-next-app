@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
-  env: {
-    gmail: 'epice.suport.dialogflow17@gmail.com',
-  },
+	publicRuntimeConfig: {
+		apiEpiceDatabase: process.env.EPICE_DATABASE_API
+	}
 }
+
+module.exports = nextConfig
