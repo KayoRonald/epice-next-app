@@ -1,7 +1,9 @@
-import axios from 'axios';
+import axios from 'axios'
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 const api = axios.create({
-  baseURL: 'https://epice-app.herokuapp.com/',
-});
+	baseURL: publicRuntimeConfig.apiEpiceDatabase
+})
 
-export default api;
+export default api
