@@ -8,13 +8,16 @@ import {
 import { AiOutlineSend, AiOutlineUserAdd, AiOutlineMail } from 'react-icons/ai'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
-import { ContainerInput } from '@/components/index';
-import axios from 'axios';
+import { ContainerInput } from 'src/components/';
+import axios from 'src/api/';
 import { Input } from '@/components/Input';
-import { schema } from 'src/schema/index';
+import { schema } from 'src/schema/';
 import { FormValues } from '@/utils/types';
 
 export default function FormSubscription() {
+  const courses = [
+    'Edificações', 'INFO', 'Geologia', 'Mineração', 'Visitante'
+  ]
   const [loading, setLoading] = React.useState<boolean>(false);
   const toast = useToast()
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({
@@ -23,7 +26,8 @@ export default function FormSubscription() {
   async function onSubmitHandler<FormValues>(data: FormValues): Promise<void> {
     try {
       setLoading(true)
-      await axios.post('/api/subscription', data)
+      const res = await axios.post('/v1/epice', data)
+      console.log(res)
       toast({
         title: 'Cadastrado com sucesso.',
         description: "Aguarde alguns dias para realização do evento.",
@@ -32,11 +36,10 @@ export default function FormSubscription() {
         isClosable: true,
       })
     } catch (error: any) {
-      let message: string = error.response.data.message   
-      console.log(message)
+      console.log(error)
       toast({
         title: 'Não foi possível cadastrar.',
-        description: message,
+        description: error.response.data.message,
         status: 'error',
         duration: 5000,
         isClosable: true,
@@ -97,13 +100,13 @@ export default function FormSubscription() {
               Escolha o Curso que você faz
             </FormLabel>
             <Select
-              placeholder="Ex: INFO, Eletrônica, Visitante..."
+              placeholder="Ex: Informática, Eletrônica, Visitante..."
               {...register("curso")}
               backgroundColor={useColorModeValue("white", "gray.800")}
             >
-              <option value="INFO">INFO</option>
-              <option value="Eletrônica">Eletrônica</option>
-              <option value="Visitante">Visitante</option>
+              {courses.map((courses, index: number) =>{
+                return <option value={courses} key={index+1}>{courses}</option>
+              })}
             </Select>
             <FormErrorMessage>
               {errors.curso?.message}
