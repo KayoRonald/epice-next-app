@@ -4,7 +4,7 @@ import {
   Button, chakra, Flex, HStack,
   IconButton, VisuallyHidden, useColorModeValue, useColorMode
 } from '@chakra-ui/react';
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { Desktop, Mobile } from './components'
 const DURATION = 1000;
@@ -36,7 +36,7 @@ export default function NavHero() {
             >
               <VisuallyHidden>EPICE {new Date().getFullYear()}</VisuallyHidden>
             </chakra.a>
-            <chakra.h1 as="a"  href="/" fontSize="xl" fontWeight="bold" ml="2" color={useColorModeValue("#18216d", "white")}>
+            <chakra.h1 as="a" href="/" fontSize="xl" fontWeight="bold" ml="2" color={useColorModeValue("#18216d", "white")}>
               EPICE {new Date().getFullYear()}
             </chakra.h1>
           </Flex>
@@ -50,7 +50,7 @@ export default function NavHero() {
                 _hover={{
                   bg: 'purple.600'
                 }}>
-                <Link
+                <ScrollLink
                   to="contact"
                   spy={false}
                   smooth="easeInOutQuart"
@@ -61,14 +61,14 @@ export default function NavHero() {
                   }}
                 >
                   Inscrições
-                </Link>
+                </ScrollLink>
               </Button>
               <IconButton
                 size="md"
                 fontSize="lg"
                 aria-label={`Switch to ${colorMode === 'light' ? 'Dark' : 'Light'} mode`}
                 bg={useColorModeValue("gray.50", "#464460")}
-                _hover={{ bg: useColorModeValue("gray.50", "#464460")}}
+                _hover={{ bg: useColorModeValue("gray.50", "#464460") }}
                 color={useColorModeValue("gray.800", "white")}
                 boxShadow={"none"}
                 ml={{ base: "0", md: "3" }}

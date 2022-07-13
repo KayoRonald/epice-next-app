@@ -1,34 +1,36 @@
 /* eslint-disable */
 import React from 'react'
-import { GetStaticProps } from 'next'
+// import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { Box, Heading, Container, Text, useColorModeValue, Flex, ListItem, List, Avatar, Divider } from '@chakra-ui/react'
-import { FaCheck } from 'react-icons/fa'
-import { initializeApollo } from '@/utils/apollo'
-import { GET_FEATURES } from '../graphql/getFeatures'
-import { PropsQl } from '@/utils/types'
+import { Box, Heading, Container, Text, Center, Flex, ListItem, List, Avatar, Divider } from '@chakra-ui/react'
+// import { initializeApollo } from '@/utils/apollo'
+// import { GET_FEATURES } from '../graphql/getFeatures'
+// import { PropsQl } from '@/utils/types'
 
 
-export const getStaticProps: GetStaticProps = async () => {
-  const apolloClient = initializeApollo()
+// export const getStaticProps: GetStaticProps = async () => {
+//   const apolloClient = initializeApollo()
 
-  const { data } = await apolloClient.query({ query: GET_FEATURES })
+//   const { data } = await apolloClient.query({ query: GET_FEATURES })
 
-  return {
-    props: {
-      data: data.features,
-      initialApolloState: apolloClient.cache.extract(),
-    }
-  }
-}
-const Changelog = ({ data }: PropsQl) => {
+//   return {
+//     props: {
+//       data: data.features,
+//       initialApolloState: apolloClient.cache.extract(),
+//     }
+//   }
+// }
+const Changelog = () => {
   return (
     <React.Fragment>
       <Head>
         <title>Acompanhe os Logs do site</title>
       </Head>
       <Container mt={24} mb={3} minHeight="100vh" maxW="180ch">
-        {data.map((data: PropsQl) => {
+       <Center>
+        Sem contéudo
+       </Center>
+        {/* {data.map((data: PropsQl) => {
           return (
             <Flex flexDir="column" alignItems="center" paddingX={10} paddingY={5} padding={0}>
               <Box width="99%" >
@@ -66,7 +68,7 @@ const Changelog = ({ data }: PropsQl) => {
               </Box>
             </Flex>
           );
-        })}
+        })} */}
       </Container>
     </React.Fragment>
   );

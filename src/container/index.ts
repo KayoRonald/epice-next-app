@@ -3,4 +3,4 @@ export { default as HeroHome } from './Hero';
 export { default as MyTimeline } from './MyTimeline';
 export { default as MiddleBlock } from './Jumbo';
 export { default as ContentBlock } from './ContentBlock';
-export { default as ContactForm } from './ContactForm';
+export { default as Form } from './FormSubscription';

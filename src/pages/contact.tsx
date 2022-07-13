@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
   async function onSubmitHandler<SubmitHandler, FormValues>(data: FormValues): Promise<void> {
     try {
       setLoading(true)
-      await axios.post('/api/contact', data)
+      console.log(data)
       toast({
         title: 'Enviado com sucesso!.',
         description: "Aguarde alguns dias para que possamos lhe ajudar.",
