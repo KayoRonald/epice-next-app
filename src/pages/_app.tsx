@@ -2,12 +2,10 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import { AppProps } from 'next/app'
-import { ApolloProvider } from '@apollo/client'
 import { Chakra } from '../theme/'
 import { Styles } from '../styles/styles'
 import { NavBar } from '../components/'
 import { Footer } from '@/container/index'
-import { useApollo } from '@/utils/apollo'
 
 const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -23,10 +21,8 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
     }
   })
 
-  const client = useApollo(pageProps.initialApolloState)
 
   return (
-    <ApolloProvider client={client}>
       <Chakra cookies={pageProps.cookies}>
         <Head>
           <meta name="viewport" content="viewport-fit=cover" />
@@ -39,7 +35,6 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
         <Styles />
         <Footer />
       </Chakra >
-    </ApolloProvider>
   )
 }
 

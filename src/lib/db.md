@@ -1,3 +1,4 @@
+```ts
 import { db } from '../connection';
 
 export default async function excuteQuery(query: any, values: any) {
@@ -21,3 +22,4 @@ export default async function excuteQuery(query: any, values: any) {
     throw Error('Ops... Ocorreu algum erro :(')
   }
 }
+```

@@ -1,3 +1,4 @@
+```ts
 import { useMemo } from 'react'
 import {
   ApolloClient,
@@ -38,3 +39,4 @@ export function useApollo(initialState = {}) {
   const store = useMemo(() => initializeApollo(initialState), [initialState])
   return store
 }
+```

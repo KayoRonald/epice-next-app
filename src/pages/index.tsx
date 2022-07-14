@@ -1,13 +1,13 @@
 import React from 'react'
 import Script from 'next/script'
 import Head from 'next/head'
-import { MyTimeline, HeroHome, MiddleBlock, ContentBlock, ContactForm } from '../container'
+import { MyTimeline, HeroHome, MiddleBlock, ContentBlock, Form } from '../container'
 
 export default function Index() {
   return (
     <React.Fragment>
       <Head>
-        <title>EPICE - {new Date().getFullYear()}</title>
+        <title>{`EPICE - ${new Date().getFullYear()}`}</title>
       </Head>
       <HeroHome />
       {/* Chat Bot */}
@@ -28,7 +28,7 @@ export default function Index() {
       <MiddleBlock />
       <ContentBlock />
       <MyTimeline />
-      <ContactForm />
+      <Form />
     </React.Fragment>
   )
 }
