@@ -3,6 +3,7 @@
   "rules": {
     "react/display-name": "off",
     "react/no-children-prop": "off",
-    "import/no-anonymous-default-export": [2, {"allowArrowFunction": true}]
+    "import/no-anonymous-default-export": [2, {"allowArrowFunction": true}],
+    "react-hooks/rules-of-hooks": "off"
   }
 }
